@@ -1,0 +1,1 @@
+This guide will walk you through the creation of a small 3D arcade game using QML. Besides the development process of a game in Qt Quick, it will show you how to create and use 3D content in your application. This tutorial provides an overview of the Qt3D QML API and will show you how to efficiently use its elements in your Qt Quick program.

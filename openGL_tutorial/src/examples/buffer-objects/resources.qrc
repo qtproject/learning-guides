@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>coloringFragmentShader.fsh</file>
+        <file>coloringVertexShader.vsh</file>
+        <file>cubeTexture.png</file>
+        <file>lightingFragmentShader.fsh</file>
+        <file>lightingVertexShader.vsh</file>
+    </qresource>
+</RCC>

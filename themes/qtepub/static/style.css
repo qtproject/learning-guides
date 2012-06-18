@@ -1,0 +1,527 @@
+/    
+      sphinxdoc.css_t
+      ~~~~~~~~~~~~~~~
+     
+      Sphinx stylesheet -- sphinxdoc theme.  Originally created by
+      Armin Ronacher for Werkzeug.
+     
+      :copyright: Copyright 2007-2011 by the Sphinx team, see AUTHORS.
+      :license: BSD, see LICENSE for details.
+     
+     /
+
+@import url("basic.css");
+
+/     -- page layout ----------------------------------------------------------- */
+
+body {
+    font-family: 'Verdana';
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    line-height: 150%;
+    text-align: center;
+    background: #e6e7e8;
+    color: #363534;
+    padding: 0;
+    margin: 0px 80px 0px 80px;
+    min-width: 740px;
+}
+
+div.document {
+    background-color: white;
+    text-align: left;
+    -moz-border-radius: 7px 7px 7px 7px;
+    -webkit-border-radius: 7px 7px 7px 7px;
+    border-radius: 7px 7px 7px 7px;
+}
+
+
+
+
+
+div.bodywrapper {
+    margin: 0 240px 0 0;
+    border-right: 2px solid #e6e7e8;
+}
+
+div.body {
+    margin: 0;
+    padding: 0.5em 20px 20px 20px;
+}
+
+div.related {
+    font-size: 1em;
+    background-color: white;
+    -moz-border-radius: 7px 7px 7px 7px;
+    -webkit-border-radius: 7px 7px 7px 7px;
+    border-radius: 7px 7px 7px 7px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+div.related ul {
+
+    height: 2em;
+
+}
+
+div.related ul li {
+    margin: 0;
+    padding: 0;
+    height: 2em;
+    float: left;
+}
+
+div.related ul li.right {
+    float: right;
+    margin-right: 5px;
+}
+
+div.related ul li a {
+    margin: 0;
+    padding: 0 5px 0 5px;
+    line-height: 1.75em;
+    color: #00732F;
+    text-decoration: none;
+}
+
+div.related ul li a:hover {
+    color: #4c0033;
+    text-decoration: none;
+}
+
+div.sphinxsidebarwrapper {
+    padding: 0;
+}
+
+div.sphinxsidebar {
+    margin: 0;
+    padding: 0.5em 15px 15px 0;
+    width: 210px;
+    float: right;
+    text-align: left;
+}
+
+div.sphinxsidebar p a {
+    font: 10px/1.2 Verdana;
+    float: right;
+    margin: 0px 0px 20px 0px;
+    padding: 0px 0px 0px 0px;
+    height: auto;
+    width: 200px;
+}
+
+
+
+div.sphinxsidebar h3, div.sphinxsidebar h4 {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    font-size: 11px;
+    color: #00732F;
+}
+
+div.sphinxsidebar h3 a {
+    color: #00732F;
+}
+
+div.sphinxsidebar ul {
+    float: right;
+    margin: 0px 0px 20px 0px;
+    padding: 0px 0px 0px 0px;
+    height: auto;
+    width: 200px;
+    list-style: none outside none;
+}
+div.sphinxsidebar ul li {
+    margin-left: 0px;
+    padding-left: 15px;
+    font: 10px/1.2 Verdana;
+    background: url("bullet_dn.png") no-repeat scroll 0 5px transparent;
+    word-wrap: break-word;
+}
+
+div.sphinxsidebar ul ul {
+    float: right;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    height: auto;
+    width: 180px;
+    list-style: none outside none;
+}
+
+div.sphinxsidebar ul ul li {
+    margin-left: 0px;
+    padding-left: 15px;
+    font: 10px/1.2 Verdana;
+    background: url("bullet_dn.png") no-repeat scroll 0 5px transparent;
+    word-wrap: break-word;
+}
+
+div.sphinxsidebar li {
+    border: none;
+    padding-left: 15px;
+    font: 10px/1.2 Verdana;
+    background: url("bullet_dn.png") no-repeat scroll 0 5px transparent;
+    word-wrap: break-word;
+}
+
+.sphinxsidebar, .searchtip {
+font: 10px/1.2 Verdana;
+}
+
+
+div.footer {
+    color: #797775;
+    font: Verdana;
+    text-align: center;
+    background-color: #e6e7e8;
+    padding: 3px 8px 3px 0;
+    clear: both;
+    font-size: 9px;
+    text-align: right;
+}
+
+div.footer a {
+    color: #00732F;
+    text-decoration: none;
+}
+
+div.footer a:hover {
+    color: #4c0033;
+    text-decoration: none;
+}
+
+/     -- body styles ----------------------------------------------------------- */
+
+p {
+    margin: 0.8em 0 0.5em 0;
+}
+
+.body img {
+    margin: 20px;
+    padding: 12px;
+    background-color: #f2f2f2;
+    border: 1px solid #e2e2e2;
+}
+
+a {
+    color: #00732F;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #4c0033;
+    text-decoration: none;
+}
+
+div.body a {
+    text-decoration: underline;
+}
+
+h1 {
+    font: bold 18px/1.2 Arial;
+}
+
+h2 {
+    font: 600 16px/1.2 Arial;
+    margin-top: 15px;
+    width: 100%;
+}
+
+h3 {
+    font: 600 16px/1.2 Arial;
+    margin-top: 15px;
+    width: 100%;
+}
+
+
+
+div.body h1 a, div.body h2 a, div.body h3 a, div.body h4 a, div.body h5 a, div.body h6 a {
+    color: black!important;
+}
+
+h1 a.anchor, h2 a.anchor, h3 a.anchor, h4 a.anchor, h5 a.anchor, h6 a.anchor {
+    display: none;
+    margin: 0 0 0 0.3em;
+    padding: 0 0.2em 0 0.2em;
+    color: #aaa!important;
+}
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor,
+h5:hover a.anchor, h6:hover a.anchor {
+    display: inline;
+}
+
+h1 a.anchor:hover, h2 a.anchor:hover, h3 a.anchor:hover, h4 a.anchor:hover,
+h5 a.anchor:hover, h6 a.anchor:hover {
+    color: #777;
+    background-color: #eee;
+}
+
+a.headerlink {
+    color: #c60f0f!important;
+    font-size: 1em;
+    margin-left: 6px;
+    padding: 0 4px 0 4px;
+    text-decoration: none!important;
+}
+
+a.headerlink:hover {
+    background-color: #ccc;
+    color: white!important;
+}
+
+cite, code, tt {
+
+     padding: 3px;
+     margin: 0;
+     border-collapse: separate;
+     font-size: 11px;
+     border-spacing: 0;
+     word-wrap: break-word;
+     font: 13px/1.2 Verdana;
+     background-color: #FFFFFF;
+     color: #66666E;
+
+}
+
+tt {
+
+}
+
+tt.descname, tt.descclassname, tt.xref {
+
+}
+
+hr {
+        background-color: #E6E6E6;
+        border: 1px solid #E6E6E6;
+        height: 1px;
+        width: 100%;
+        text-align: left;
+        margin: 15px 0px 15px 0px;
+}
+
+a tt {
+    color: #00732F;
+    text-decoration: none;
+}
+
+a tt:hover {
+    color: #4c0033;
+    text-decoration: none;
+}
+
+pre {
+
+}
+
+pre a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+td.linenos pre {
+    padding: 0.5em 0;
+}
+
+
+
+div.quotebar {
+    background-color: #f8f8f8;
+    max-width: 250px;
+    float: right;
+    padding: 2px 7px;
+    border: 1px solid #ccc;
+}
+
+div.topic {
+    background-color: #f8f8f8;
+}
+
+table, pre {
+        border-collapse: separate;
+        font-size: 11px;
+        margin-bottom: 25px;
+}
+
+.highlight-bash pre {
+        background-color: #F6F6F6;
+        border: 1px solid #E6E6E6;
+    -moz-border-radius: 7px 7px 7px 7px;
+    -webkit-border-radius: 7px 7px 7px 7px;
+    border-radius: 7px 7px 7px 7px;
+        margin: 0 20px 10px 10px;
+        padding: 20px 15px 20px 20px;
+        overflow-x: auto;
+}
+
+.highlight-ini pre {
+        background-color: #F6F6F6;
+        border: 1px solid #E6E6E6;
+    -moz-border-radius: 7px 7px 7px 7px;
+    -webkit-border-radius: 7px 7px 7px 7px;
+    border-radius: 7px 7px 7px 7px;
+        margin: 0 20px 10px 10px;
+        padding: 20px 15px 20px 20px;
+        overflow-x: auto;}
+
+.highlight-js pre {
+        background-color: #F6F6F6;
+        border: 1px solid #E6E6E6;
+    	-moz-border-radius: 7px 7px 7px 7px;
+    	-webkit-border-radius: 7px 7px 7px 7px;
+    	border-radius: 7px 7px 7px 7px;
+        margin: 0 20px 10px 10px;
+        padding: 20px 15px 20px 20px;
+        overflow-x: auto;
+}
+
+.highlight-cpp pre {
+        background-color: #F6F6F6;
+        border: 1px solid #E6E6E6;
+    	-moz-border-radius: 7px 7px 7px 7px;
+    	-webkit-border-radius: 7px 7px 7px 7px;
+    	border-radius: 7px 7px 7px 7px;
+        margin: 0 20px 10px 10px;
+        padding: 20px 15px 20px 20px;
+        overflow-x: auto;
+}
+
+.highlighttable pre {
+        background-color: transparent;
+        border: 1px solid transparent;
+    	-moz-border-radius: 7px 7px 7px 7px;
+    	-webkit-border-radius: 7px 7px 7px 7px;
+    	border-radius: 7px 7px 7px 7px;
+        margin: 0 20px 10px 10px;
+        padding: 20px 15px 20px 20px;
+        overflow-x: auto;
+}
+
+div.highlight, div.highlight-cpp span {
+        line-height: 1.2;
+}
+
+table td, table th {
+        padding: 5px 15px 5px 15px;
+        background-color: #E1E1E1;
+        border-left: 1px solid #E6E6E6;
+}
+
+
+
+
+
+
+div.note {
+
+        margin: 0 20px 10px 10px;
+    overflow-x: auto;
+
+    -moz-border-radius: 7px 7px 7px 7px;
+    -webkit-border-radius: 7px 7px 7px 7px;
+    border-radius: 7px 7px 7px 7px;
+    background-color: #fbff92;
+    border: 1px solid #0072f2;
+    font-weight: bold;
+    padding: 3px 5px;
+    word-spacing: 3px;
+    color: #363534;
+}
+
+div.warning {
+        margin: 0 20px 10px 10px;
+    overflow-x: auto;
+
+    -moz-border-radius: 7px 7px 7px 7px;
+    -webkit-border-radius: 7px 7px 7px 7px;
+    border-radius: 7px 7px 7px 7px;
+    background-color: #ffbfb8;
+    border: 1px solid #ff4545;
+    font-weight: bold;
+    padding: 3px 5px;
+    word-spacing: 3px;
+    color: #363534;
+}
+
+div.admonition p, div.warning p {
+    margin: 0.5em 1em 0.5em 1em;
+    padding: 0;
+    font: 13px/1.2 Verdana;
+}
+
+div.admonition pre, div.warning pre {
+    margin: 0.4em 1em 0.4em 1em;
+}
+
+
+div.note p.admonition-title {
+    margin: 0;
+    padding: 0.1em 0 0.1em 0.5em;
+    color: #0072f2;
+    font: 600 16px/1.2 Arial;
+    font-weight: bold;
+
+}
+
+div.note a {
+    color: #0072f2;
+
+}
+
+div.note a:hover {
+    color: #002f63;
+
+}
+
+div.note cite {
+    background-color: #fcffc3;
+}
+
+div.warning p.admonition-title {
+    margin: 0;
+    padding: 0.1em 0 0.1em 0.5em;
+    color: #ff4545;
+    font: 600 16px/1.2 Arial;
+    font-weight: bold;
+
+}
+
+div.warning a {
+    color: #ff4545;
+}
+
+div.warning a:hover {
+    color: #8c2626
+    ;
+}
+
+div.warning cite {
+    background-color: #ffdad6;
+}
+
+div.admonition ul, div.admonition ol,
+div.warning ul, div.warning ol {
+    margin: 0.1em 0.5em 0.5em 3em;
+    padding: 0;
+}
+
+div.versioninfo {
+    margin: 1em 0 0 0;
+    border: 1px solid #ccc;
+    background-color: #DDEAF0;
+    padding: 8px;
+    line-height: 1.3em;
+    font-size: 0.9em;
+}
+
+.viewcode-back {
+    font-family: 'Arial';
+}
+
+div.viewcode-block:target {
+    background-color: #f4debf;
+    border-top: 1px solid #ac9;
+    border-bottom: 1px solid #ac9;
+}

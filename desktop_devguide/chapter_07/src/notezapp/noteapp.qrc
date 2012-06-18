@@ -1,0 +1,28 @@
+<RCC>
+    <qresource prefix="/qml">
+        <file>qml/noteapp/NoteToolbar.qml</file>
+        <file>qml/noteapp/Page.qml</file>
+        <file>qml/noteapp/PagePanel.qml</file>
+        <file>qml/noteapp/Tool.qml</file>
+        <file>qml/noteapp/main.qml</file>
+        <file>qml/noteapp/Marker.qml</file>
+        <file>qml/noteapp/MarkerPanel.qml</file>
+        <file>qml/noteapp/Note.qml</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file>qml/noteapp/images/add.png</file>
+        <file>qml/noteapp/images/background.png</file>
+        <file>qml/noteapp/images/clear.png</file>
+        <file>qml/noteapp/images/close.png</file>
+        <file>qml/noteapp/images/delete.png</file>
+        <file>qml/noteapp/images/fun_note.png</file>
+        <file>qml/noteapp/images/funmarker.png</file>
+        <file>qml/noteapp/images/notetoolbar.png</file>
+        <file>qml/noteapp/images/page.png</file>
+        <file>qml/noteapp/images/personal_note.png</file>
+        <file>qml/noteapp/images/personalmarker.png</file>
+        <file>qml/noteapp/images/work_note.png</file>
+        <file>qml/noteapp/images/workmarker.png</file>
+        <file>qml/noteapp/images/yellowmarker.png</file>
+    </qresource>
+</RCC>

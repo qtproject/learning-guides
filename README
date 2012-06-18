@@ -1,0 +1,63 @@
+..
+    ---------------------------------------------------------------------------
+    Copyright (C) 2012 Digia Plc and/or its subsidiary(-ies).
+    All rights reserved.
+    This work, unless otherwise expressly stated, is licensed under a
+    Creative Commons Attribution-ShareAlike 2.5.
+    The full license document is available from
+    http://creativecommons.org/licenses/by-sa/2.5/legalcode .
+    ---------------------------------------------------------------------------
+
+General
+--------
+
+These guides and tutorials are meant to familiarize you with various aspects of mobile
+as well as desktop application development by walking you through the development process of applications with features relevant to the topics of each specific guide.
+Each guide is split into several chapters and each chapter consists of multiple steps.
+Each step describes specific features of the application, the development approach and
+detailed code used for the application being implemented in the guide.
+
+The the content is currently published under following link:
+
+http://qt-project.org/wiki/Developer-Guides
+
+We invite all interested members of the Qt community to contribute to this project.
+
+
+Installing Sphinx
+-----------------
+
+These guides and tutorials are written using the Sphinx tool.
+
+You can read detailed instruction on how to install Sphinx on your system by reading
+its documentation http://sphinx.pocoo.org/
+
+In Ubuntu you can install Sphinx like this:
+
+sudo apt-get install python-sphinx
+sudo apt-get install texlive
+
+Note: Please make sure to have all the related texlive-latex-extra packages and additionally the texlive-extra-utils, texlive-font-utils and texlive-fonts-* related packages installed.
+
+
+Building the guides and tutorials
+---------------------------------
+
+Once you have Sphinx installed properly then you can go in each of the folder of the guides and run
+
+"make html" - to make standalone HTML files
+"make epub" - to make an epub
+"make latexpdf" - to make LaTeX files and run them through pdflatex
+"make qthelp" - to make HTML files and a qthelp project
+
+A _build directory will be created that will contain the generated format of the content (html, epub, pdf, qthelp).
+
+Only "make html" is currently supported when building from the root folder of the project. This creates a master html content set for all guides. It can be used in automated builds for internal team work.
+
+
+Source code
+-----------
+
+In most cases all the chapters will have some code example that you can see.
+However, to get the complete entire code of the guide/tutorial you can either get it inside a "src" folder if one exists or inside the last chapter.
+
