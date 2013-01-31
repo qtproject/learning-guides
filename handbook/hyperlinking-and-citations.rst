@@ -19,11 +19,11 @@ Hyperlinking & Citations
 External Weblinks
 -----------------
 
-     External links refer to pages located on the Internet. In order to link to external links simply use::
+ * External links refer to pages located on the Internet. In order to link to external links simply use::
 
-        `Qt Homepage (http://qt.nokia.com) <http://qt.nokia.com/>`_
+        `Qt Homepage (http://qt-project.org) <http://qt-project.org/>`_
 
-      This is rendered as a normal hyperlink: `Qt Homepage (http://qt.nokia.com) <http://qt.nokia.com/>`_
+ * This is rendered as a normal hyperlink: `Qt Homepage (http://qt-project.org) <http://qt-project.org/>`_
 
 .. Note:: If you have an underscore within the label/name, escape it with a '\\' character
 
@@ -43,27 +43,25 @@ In order to refer to a place in the text in any document of the project, place a
 How to Make Anchors
 -------------------
 
-     For example, there is an anchor at the top of the page which looks like:
+* For example, there is an anchor at the top of the page which looks like:
 
     ``.. _formatting_guide_beginning_anchor:``
 
-     In order to add a link to the beginning of this page, we write:
+* In order to add a link to the beginning of this page, we write:
 
     ``see :ref:`formatting_guide_beginning_anchor```.
 
-     The link will look like this because the anchor is just above the "Hyperlinking & Citations" title at the beginning of this page:
+* The link will look like this because the anchor is just above the "Hyperlinking & Citations" title at the beginning of this page:
 
-    see :ref:`formatting_guide_beginning_anchor`
-
+    ``see :ref:`formatting_guide_beginning_anchor```
 
 .. note:: The hyperlinked text will automatically take the name of the title that follows the anchor
 
-
-     Sometimes we will need to use another text that differs from the one in the anchor label. In this case you write:
+* Sometimes we will need to use another text that differs from the one in the anchor label. In this case you write:
 
     ``It refers to the section itself, see :ref:`this <formatting_guide_beginning_anchor>`.``
 
-     This link will look like this:
+* This link will look like this:
 
     It refers to the section itself, see :ref:`this <formatting_guide_beginning_anchor>`.
 
@@ -75,7 +73,7 @@ Sometimes you want to link to files within your source tree which are not docume
 
 We use the ``:Download:`` role for this.
 
-When when it is used, the referenced file is automatically marked for inclusion in the output when building (obviously, for HTML output only). All downloadable files are put into the _downloads subdirectory of the output directory; duplicate filenames are handled::
+When it is used, the referenced file is automatically marked for inclusion in the output when building (obviously, for HTML output only). All downloadable files are put into the _downloads subdirectory of the output directory; duplicate filenames are handled::
 
         :download:`download hello.qml <hello.qml>`
 
@@ -99,8 +97,7 @@ this::
 #. :qtquick-repo:`Introduction to the QML Language <qdeclarativeintroduction.html>`
 #. :mobility:`Location API <location-overview.html>`
 #. :component:`Introduction to the Qt Quick Components <qt-components-introduction.html>`
-#. :publish:`How to correctly format headings </handbook/page-setup-and-formatting.html#headings>`
-#. :installer:`Devices Supported by Nokia Smart Installer for Symbian <smartinstaller-supported-devices.html>`
+#. :installer:`Devices Supported by Nokia Smart Installer for Symbian <Nokia_Smart_Installer_for_Symbian>`
 
 
 
@@ -124,10 +121,7 @@ will result in:
 
 #. :component:`Introduction to the Qt Quick Components <qt-components-introduction.html>`
 
-#. :publish:`How to correctly format headings </handbook/page-setup-and-formatting.html#headings>`
-
-#. :installer:`Devices Supported by Nokia Smart Installer for Symbian <smartinstaller-supported-devices.html>`
-
+#. :installer:`Devices Supported by Nokia Smart Installer for Symbian <Nokia_Smart_Installer_for_Symbian>`
 
 Citations
 ---------

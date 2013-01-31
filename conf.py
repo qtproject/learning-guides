@@ -37,7 +37,7 @@ htmlhelp_basename = 'QtLearning'
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'QtLearningQMLGuides.tex', u'Qt Learning QML Guides Material',
-   u'(C) 2011 Nokia. http://qt.nokia.com/learning', 'manual'),
+   u'(C) 2012 Digia Plc. http://qt.digia.com/Product/Learning/', 'manual'),
 ]
 
 # -- Options for Epub output ---------------------------------------------------

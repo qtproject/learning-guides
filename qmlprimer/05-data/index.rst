@@ -11,28 +11,28 @@
 Acquire and Visualize Data
 ==========================
 
-In this section, we will leave our clock application for a while and start another one: a weather forecast application. This section focuses on handling data. Our previous code kept data in properties and in JavaScript variables. This is only sufficient for small and simple applications. Sooner or later you will need to deal with larger sets of data.
+In this section, we leave our clock application for a while and start another one: a weather forecast application. This section focuses on handling data. Our previous code kept data in properties and in JavaScript variables. This is only sufficient for small and simple applications. Sooner or later you will need to deal with larger sets of data.
 
-Qt Quick implements the known model-view architecture and provides a handy set of APIs for this. There is a selection of     models* which keep and, if needed, acquire data. *View* elements read model items and render each of them with the help of a *delegate* in a specific way, e.g. as a grid or as a list.
+Qt Quick implements the known model-view architecture and provides a handy set of APIs for this. There is a selection of *models* which keep and, if needed, acquire data. *View* elements read model items and render each of them with the help of a *delegate* in a specific way. For example, as a grid or as a list.
 
 Models
 ------
 
 Qt Quick models are very simple since they are based on the concept of lists. The three kinds of models that are used the most are:
 
-     an ``int`` value (useful to display something multiple times)
-     a JavaScript array of objects
-     list models, e.g. :qt:`ListModel<qml-listmodel.html>` and :qt:`XmlListModel<qml-xmllistmodel.html>` element
+* an ``int`` value (useful to display something multiple times)
+* a JavaScript array of objects
+* list models, for example,  :qt:`ListModel<qml-listmodel.html>` and :qt:`XmlListModel<qml-xmllistmodel.html>` elements
 
-See the     Models and Data Handling* section on the :qt:`"QML Elements"<qdeclarativeelements.html>` page in Qt Documentation for a full list of model related items. There are also some advanced approaches toward using models which are discussed in the :qt:`"QML Data Models"<qdeclarativemodels.html>` article in Qt Documentation.
+See the *Models and Data Handling* section in the :qt:`"QML Elements"<qdeclarativeelements.html>` article for a full list of model related items. There are also some advanced approaches which are discussed in the :qt:`"QML Data Models"<qdeclarativemodels.html>` article in Qt Documentation.
 
-We will use :qt:`XmlListModel<qml-xmllistmodel.html>` and take a look on a few examples where an ``int`` and an ``array`` are used as models.
+We are going to use :qt:`XmlListModel<qml-xmllistmodel.html>` and take a look at a few examples where an ``int`` and an ``array`` are used as models.
 
-Our weather forecast application will use Google weather APIs to get the data.
+Our weather forecast application uses Google weather APIs to get the data.
 
-.. Note:: Google weather APIs are not announced as a regular internet service.
+.. Note:: Google weather APIs are not announced as a regular internet service yet.
 
-With these APIs, you can make a query on the web and receive weather data in XML as a response. Since this is a very common way of data provisioning in general, Qt Quick provides a dedicated model for this: :qt:`XmlListModel<qml-xmllistmodel.html>`.
+With these APIs, you can make a query on the web and receive weather data in XML as a response. As this is a very common way of data provisioning, Qt Quick provides a dedicated model for it: :qt:`XmlListModel<qml-xmllistmodel.html>`.
 
 :qt:`XmlListModel<qml-xmllistmodel.html>` uses XPath and XQuery (`see this article in Wikipedia <http://en.wikipedia.org/wiki/XPath>`_) to read the data delivered as XML. :qt:`XmlListModel<qml-xmllistmodel.html>` uses :qt:`XmlRole<qml-xmlrole.html>` to create model items for selected XML tree nodes. Let's see how this works.
 
@@ -138,14 +138,14 @@ A model which queries and processes this data looks like this:
 
 If you take a closer look at the code inside the :qt:`XmlRole<qml-xmlrole.html>` elements, you will notice that they basically create model items with property-value pairs by mapping them to the specified nodes in the XML tree starting at the node specified in ``query``. Like :qt:`Image<qml-image.html>` and :qt:`Font<qml-font.html>`, :qt:`XmlListModel<qml-xmllistmodel.html>` provides ``status`` and ``progress`` properties, which can be used to track the loading progress and catch the errors. Additionally, there is a ``reload()`` method which forces the model to query the URL again and load updated data. We will use this later to make sure that the weather forecast is always up-to-date.
 
-Repeater and views
+Repeater and Views
 ------------------
 
-Now we need to visualize the weather data collected in our models. There are various ways to do this in Qt Quick. Most visualization elements inherit from :qt:`Flickable<qml-flickalbe.html>`:
+Now we need to visualize the weather data collected in our models. There are various ways to do this in Qt Quick. Most visualization elements are inherited from :qt:`Flickable<qml-flickalbe.html>`:
 
-     :qt:`ListView<qml-listview.html>`
-     :qt:`GridView<qml-gridview.html>`
-     :qt:`PathView<qml-pathview.html>`
+    * :qt:`ListView<qml-listview.html>`
+    * :qt:`GridView<qml-gridview.html>`
+    * :qt:`PathView<qml-pathview.html>`
 
 These elements act like view ports and use delegate elements to draw each model item. Views expect a fixed size to be set via ``height`` and ``width``. The content is shown inside that specified area and can be "flicked" (by default, up and down):
 
@@ -164,13 +164,13 @@ This is how it looks on the screen:
 .. image:: images/listview.png
     :align: center
 
-The best use case for views is when a large number of model items has to be displayed. Views provide a built-in scrolling or flicking functionality to support ergonomic representation of large data sets. There are also some performance reasons for this since views only load the items which become visible and not the entire set of them.
+The best use case for views is when a large number of model items has to be displayed. Views provide a built-in scrolling or flicking functionality to support ergonomic representation of large data sets. There are also some performance reasons for this as views only load items that become visible and not the entire set of them.
 
-.. Topic:: Advanced use of views
+.. Topic:: Advanced Use of Views
 
     Views provide rich functionality and can be used to create pretty sophisticated UIs. If you are interested, consider reading the `The Qt Quick Carousel Tutorial <http://qt-project.org/wiki/Qt_Quick_Carousel>`_
 
-If you have a small amount of model items which have to be placed one after the other in a certain order, it makes more sense to use a :qt:`Repeater<qml-repeater.html>`. A :qt:`Repeater<qml-repeater.html>` creates specified elements for each item in the model. These elements have to be placed on the screen by a positioner, e.g. :qt:`Column<qml-column.html>`, :qt:`Grid<qml-grid.hrml>` etc. The above example can be modified to use the :qt:`Repeater<qml-repeater.html>`:
+If you have a small number of model items that has to be placed one after the other in a certain order, it makes more sense to use a :qt:`Repeater<qml-repeater.html>`. A :qt:`Repeater<qml-repeater.html>` creates specified elements for each item in the model. These elements must be placed on the screen by a positioner, for example, :qt:`Column<qml-column.html>`, :qt:`Grid<qml-grid.hrml>`, and so on. The above example can be modified to use a :qt:`Repeater<qml-repeater.html>`:
 
 .. code-block:: js
 
@@ -188,25 +188,25 @@ This is how it looks on the screen:
 .. image:: images/repeater.png
     :align: center
 
-Note that all items are now visible even though the size of the containing element ``Column`` is not specified. :qt:`Repeater<qml-repeater.html>` calculates the size of the elements and :qt:`Column<qml-column.html>` resizes accordingly. Check the :qt:`"Presenting Data with Views" article<qml-views.html>` in Qt Documentation for more details.
+Note that all items are now visible even though the size of the containing element ``Column`` is not specified. :qt:`Repeater<qml-repeater.html>` calculates the size of the elements and :qt:`Column<qml-column.html>` resizes accordingly. Check the :qt:`"Presenting Data with Views" article<qml-views.html>` article in Qt Documentation for more details.
 
-We will finish our application by adding two visualization elements, each of which uses its own delegate. We need separate delegates since current weather conditions data and the forecast data have different structures which we would like to present in different ways.
+We will finish our application by adding two visualization elements, each of which uses its own delegate. We need separate delegates as the current weather conditions data and the forecast data have different structures, which we would like to present in different ways.
 
-But what should be used as visualization elements? It is possible with either a view a or with a :qt:`Repeater<qml-repeater.html>`. The ``weatherModelForecast`` items are displayed by a :qt:`GridView<qml-gridview.html>` and look like this:
+But what should be used as visualization elements? It is possible with either a view a or with a :qt:`Repeater<qml-repeater.html>`. The ``weatherModelForecast`` items are displayed by a :qt:`GridView<qml-gridview.html>` and it looks like this:
 
 .. image:: images/weather_forecast_munich_en_gridview.png
     :align: center
     :scale: 50%
 
 
-The same items displayed by a :qt:`Repeater<qml-repeater.html>` look like this:
+The same items displayed by a :qt:`Repeater<qml-repeater.html>` looks like this:
 
 .. image:: images/weather_forecast_munich_en.png
     :align: center
     :scale: 50%
 
 
-The ``weatherModelCurrent`` contains just one item. Due to this, a :qt:`Repeater<qml-repeater.html>` is totally sufficient for displaying it and we keep this approach. The full source code of the application:
+The ``weatherModelCurrent`` contains just one item. Due to this, a :qt:`Repeater<qml-repeater.html>` is sufficient for displaying it and we keep this approach. The complete source code of the application:
 
 (``Weather/weather.qml`` in ``qt_quick_app_dev_intro_src.zip``, see :ref:`get-primer-source-code` section)
 
@@ -214,12 +214,12 @@ The ``weatherModelCurrent`` contains just one item. Due to this, a :qt:`Repeater
   :language: js
   :start-after:      ***/
 
-.. Topic:: A note about accessing the file system
+.. Topic:: Accessing the File System
 
-     We do not need this feature in our application, but it is important to mention. In the current version, Qt Quick does not provide direct access to the local file system unless you hard-code a name of the file you would like to load.
+We do not need this feature in our application, but it is important to mention. In the current version, Qt Quick does not provide direct access to the local file system unless you hard-code a name of the file you would like to load.
 
-    A ``FolderListModel`` C++ plug-in is provided as a lab project in Qt 4.7.4 and higher, see :qt:`"FolderListModel - a C++ model plugin" article <src-imports-folderlistmodel.html>` in Qt Documentation. An earlier version of this plugin is used to develop a text editor in a :qt:`getting started tutorial<gettingstartedqml.html>`.
+A ``FolderListModel`` C++ plug-in is provided as a lab project in Qt 4.7.4 and higher to provide access to the file system. See :qt:`"FolderListModel - a C++ model plugin" article <src-imports-folderlistmodel.html>` in Qt Documentation for details. An earlier version of this plugin is used to develop a text editor in a :qt:`getting started tutorial<gettingstartedqml.html>`.
 
 .. rubric:: What's Next?
 
-In the next chapter, we will start to combine the clock and the weather forecast features in one application. We will make components based on the code we have developed so far and use these components to compose the final application.
+In the next chapter, we start to combine the clock and the weather forecast features into one application. We make components based on the code we have developed so far and use these components to compose the final application.

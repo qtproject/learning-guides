@@ -10,10 +10,10 @@
 
 .. _primer-javascript-annex:
 
-Annex. JavaScript Language Overview
+Annexure: JavaScript Language Overview
 ====================================
 
-This article provides an overview of the JavaScript language. The idea is to provide a thorough overview of all of the language's features. You may want to read through this article from start to finish to learn about all the basic features of this language - especially when you are getting started with a JavaScript related technology.
+This article provides an overview of the JavaScript language. The idea is to provide a thorough overview of all of the language's features supported by Qt Quick. You may want to read through this article from start to finish to learn about all the basic features of this language - especially when you are getting started with a related technology such as QML.
 
 This article is a slightly modified copy of the `"JavaScript Language Overview" <http://qt-project.org/wiki/JavaScript>`_ article on the Qt Project Wiki. Its content has been tested on Qt 4.8 with Qt Quick 1.1. Additionally, this article provides a Qt Quick application which runs all code examples listed below. This application is available in the ``js_basics`` folder in ``qt_quick_app_dev_intro_src.zip``, see the :ref:`get-primer-source-code` section.
 
@@ -61,7 +61,7 @@ Everything in JavaScript acts like an object.
 
 Note that in JavaScript the expression ``7.toString()`` can't be interpreted correctly. ``7.`` is parsed into a number and thereafter results in a syntax error.
 
-The primitive types ``boolean``, ``number`` and ``string`` are implicitly converted into objects when needed. For this purpose, the global object provides special constructor functions which can also be invoked manually:
+The primitive types ``boolean``, ``number``, and ``string`` are implicitly converted into objects when needed. For this purpose, the global object provides special constructor functions, which can also be invoked manually:
 
 .. code-block:: js
 
@@ -215,7 +215,7 @@ Objects are entirely dynamic sets of properties. New properties are introduced o
     p.z // undefined
 
 
-Property values can be of any type - including the ``function`` type. Methods in JavaScript are just function properties. When a function is invoked in method notation, it gets passed a reference to the object as an implicit argument called ``this``.
+Property values can be of any type - including the ``function`` type. Methods in JavaScript are just function properties. When a function is invoked in method notation, it gets a reference to the object as an implicit argument called, ``this``.
 
 .. code-block:: js
 
@@ -234,7 +234,7 @@ JavaScript allows any function to be called as a method of any object by using t
     p.move.call(p2, 1, 1)
 
 
-Prototype based Inheritance
+Prototype-based Inheritance
 ----------------------------
 
 The second way of creating objects is by using the ``new`` keyword together with a     constructor function*:
@@ -271,7 +271,7 @@ Each function in JavaScript can be used as a constructor in combination with the
     }
 
 
-First we declared a new function called ``Point`` which is meant to initialize a point. Thereafter we create our own prototype object, which in this case is redundant. The prototype of a function already defaults to an empty object. Properties which should be shared among all points are assigned to the prototype. In this case, we define the ``translate`` function which moves a point by a certain distance.
+First we declared a new function called ``Point``, which is meant to initialize a point. Thereafter we create our own prototype object, which in this case is redundant. The prototype of a function already defaults to an empty object. Properties which should be shared among all points are assigned to the prototype. In this case, we define the ``translate`` function which moves a point by a certain distance.
 
 We can now instantiate points using the Point constructor:
 
@@ -335,7 +335,7 @@ Here we have three constructors which create points, ellipsis and circles. For e
     var circle = new Circle(0, 0, 1)
     circle.move(1, 1)
 
-The JavaScript engine first looks into the ``circle`` object to see if it has a ``move`` property. As it can't find one, it asks for the prototype of ``circle``. The circle object's internal prototype reference was set to ``Circle.prototype`` during construction. It was created using the ``Ellipsis`` constructor, but it doesn't contain a ``move`` property either. Therefore, the name resolution continues with the prototype's prototype, which is created with the ``Point`` constructor and contains the ``move`` property, whereby the name resolution succeeds. The internal prototype references are commonly referred to as the     prototype chain* of an object.
+The JavaScript engine first looks into the ``circle`` object to see if it has a ``move`` property. As it can't find one, it asks for the prototype of ``circle``. The circle object's internal prototype reference was set to ``Circle.prototype`` during construction. It was created using the ``Ellipsis`` constructor, but that doesn't contain a ``move`` property either. Therefore, the name resolution continues with the prototype's prototype, which is created with the ``Point`` constructor. This time the name resolution succeeds as the ``Point`` constructor contains the ``move`` property. The internal prototype references are commonly referred to as the *prototype chain* of an object.
 
 To query information about the prototype chain, JavaScript provides the ``instanceof`` operator.
 
@@ -359,7 +359,7 @@ As properties are introduced when they are first assigned, properties delivered 
 
 As can be seen, the ``in`` operator resolves names using the prototype chain, while the ``Object.hasOwnProperty`` only looks into the current object.
 
-In most JavaScript engines, the internal prototype reference is called ``__proto__`` and is accessible from the outside. In our next example, we will use the ``__proto__`` reference to explore the prototype chain. Because this property is non-standard, you should avoid using it in all other contexts.
+In most JavaScript engines, the internal prototype reference is called ``__proto__`` and is accessible from the outside. In our next example, we will use the ``__proto__`` reference to explore the prototype chain. You should avoid using this property in all other contexts as it is a non-standard.
 First let us define a function to inspect an object by iterating its members:
 
 .. code-block:: js
@@ -404,7 +404,7 @@ As you can see, the ``move`` method is actually stored in ``circle.__proto__.__p
 Scopes, Closures and Encapsulation
 -----------------------------------
 
-In JavaScript, execution starts in the global scope. Predefined global functions like ``Math`` or ``String`` are properties of the global object. The global object serves as the root of the scope chain and is the first object created. In addition to the standard properties of the global object (see :qt:`Qt Quick ECMAScript Reference<ecmascript.html>`), Qt Quick provides a :qt:`Qt global object <qdeclarativeglobalobject.html>` with some additional properties.
+In JavaScript, execution starts in the global scope. Predefined global functions such as ``Math`` or ``String`` are properties of the global object. The global object serves as the root of the scope chain and is the first object created. In addition to the standard properties of the global object (see :qt:`Qt Quick ECMAScript Reference<ecmascript.html>`), Qt Quick provides a :qt:`Qt global object <qdeclarativeglobalobject.html>` with some additional properties.
 
 Usually, the global object can be referenced from the global scope by explicitly using the ``this`` keyword. The value of ``this`` is currently undefined in Qt Quick in the majority of contexts. See "QML JavaScript Restrictions" in :qt:`Integrating JavaScript<qdeclarativejavascript.html>` in Qt documentation.
 
@@ -421,14 +421,14 @@ The following example shows how to use lexical scopes to hide private members:
         this.setY = function(y2) { y = y2; }
     }
 
-When the ``Point`` constructor is invoked, it creates get and set methods. The newly generated scope for the invocation of the ``Point`` constructor carries the ``x`` and ``y`` members. The getters and setters reference this scope and therefore it will be retained for the lifetime of the newly created object. Interestingly there is no other way to access ``x`` and ``y`` other than via the set and get methods. This way JavaScript supports     data encapsulation*.
+When the ``Point`` constructor is invoked, it creates get and set methods. The newly generated scope for the invocation of the ``Point`` constructor carries the ``x`` and ``y`` members. The getters and setters reference this scope and therefore it is retained for the lifetime of the newly created object. Interestingly there is no other way to access ``x`` and ``y`` other than via the set and get methods. This way JavaScript supports *data encapsulation*.
 
-The concept of a function referencing the enclosing scope and retaining it for the lifetime of the function is commonly called a     closure*. Low-level programming languages like "C" do not support closures because local scopes are created using stack frames and therefore need to be destroyed when the function returns.
+The concept of a function referencing the enclosing scope and retaining it for the lifetime of the function is commonly called a *closure*. Low-level programming languages such as "C" do not support closures because local scopes are created using stack frames and therefore need to be destroyed when the function returns.
 
 Namespaces
 -----------
 
-Functions play a pivotal role in JavaScript. They serve as simple functions, methods, constructors and are used to encapsulate private properties. Additionally functions serve as anonymous namespaces:
+Functions play a pivotal role in JavaScript. They serve as simple functions, methods, and constructors, and are used to encapsulate private properties. Additionally functions serve as anonymous namespaces:
 
 .. code-block:: js
 
@@ -458,7 +458,7 @@ Named namespaces can also be created with functions. If for instance we wanted t
     PaintUtil()
 
 
-Once this little library module is executed, it will provide the single ``PaintUtil`` object which makes the utility functions accessible. A point can be instantiated using the constructor provided by ``PaintUtil`` as follows:
+Once this little library module is executed, it provides the single ``PaintUtil`` object, which makes the utility functions accessible. A point can be instantiated using the constructor provided by ``PaintUtil`` as follows:
 
 .. code-block:: js
 
@@ -470,7 +470,7 @@ Common Methods
 ---------------
 
 JavaScript allows the default behavior of an object to be changed using the ``valueOf()`` and the ``toString()`` methods. ``valueOf()`` is expected to return a value of fundamental type. It is used to compare objects (when sorting them) and to evaluate expressions comprising of objects and fundamental types. ``toString()`` is invoked when an object is cast to a string.
-In JavaScript, objects are compared for equality differently than for being greater or lower. Comparison for equality always compares the object references. Comparison for being lower or greater, on the other hand, converts objects by first converting the objects to values of fundamental types. First ``valueOf()`` is invoked and, if it doesn't return a fundamental type, it calls ``toString()`` instead.
+In JavaScript, objects are compared for equality differently than for being greater or lower. Comparison for equality always compares the object references. Comparison for being lower or greater, on the other hand, converts objects by first converting the objects to values of fundamental types. First ``valueOf()`` is invoked, and if it doesn't return a fundamental type, it calls ``toString()`` instead.
 
 For our ``Point`` class, we could define the methods as follows:
 
@@ -517,14 +517,13 @@ Resources
 
 Useful web links:
 
-     `"The JavaScript Reference" <https://developer.mozilla.org/en/JavaScript/Reference>`_ on the Mozilla Developer Network
-     `"JavaScript. The core." by Dmitry A. Soshnikov" <http://dmitrysoshnikov.com/ecmascript/javascript-the-core/>`_
-     `"Changes to JavaScript: EcmaScript 5  by Mark Miller" <http://www.youtube.com/watch?v=Kq4FpMe6cRs>`_ - a video from Google Tech Talk, May 18, 2009
-     `"Standard ECMA-262" <http://www.ecma-international.org/publications/standards/Ecma-262.htm>`_ - PDF download of the official standard
-
+* `"The JavaScript Reference" <https://developer.mozilla.org/en/JavaScript/Reference>`_ on the Mozilla Developer Network
+* `"JavaScript. The core." by Dmitry A. Soshnikov" <http://dmitrysoshnikov.com/ecmascript/javascript-the-core/>`_
+* `"Changes to JavaScript: EcmaScript 5  by Mark Miller" <http://www.youtube.com/watch?v=Kq4FpMe6cRs>`_ - a video from Google Tech Talk, May 18, 2009
+* `"Standard ECMA-262" <http://www.ecma-international.org/publications/standards/Ecma-262.htm>`_ - PDF download of the official standard
 
 Recommended Books:
 
-     `"JavaScript: The Good Parts" by Douglas Crockford <http://oreilly.com/catalog/9780596517748.do>`_
-     "Part I - Core JavaScript" in `"JavaScript: The Definitive Guide" by David Flanagan <http://shop.oreilly.com/product/9780596805531.do>`_
+*`"JavaScript: The Good Parts" by Douglas Crockford <http://oreilly.com/catalog/9780596517748.do>`_
+* "Part I - Core JavaScript" in `"JavaScript: The Definitive Guide" by David Flanagan <http://shop.oreilly.com/product/9780596805531.do>`_
 

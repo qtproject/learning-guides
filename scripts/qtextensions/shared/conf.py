@@ -43,21 +43,18 @@ todo_include_todos = True
 # :component:`ApplicationWindow <qml-applicationwindow.html>`
 
 extlinks = {
-    'sdk': ('http://doc.qt.nokia.com/sdk-1.1/%s', None),
-    'simulator': ('http://doc.qt.nokia.com/qtsimulator-1.1/%s', None),
+    'sdk': ('http://doc.qt.digia.com/sdk-1.1/%s', None),
+    'simulator': ('http://doc.qt.digia.com/qtsimulator/%s', None),
     'qt': ('http://qt-project.org/doc/qt-4.8/%s', None),
-    'qt5': ('http://qt-project.org/doc/qt-5.0/%s', None),
-    'qt5-snapshot': ('http://doc-snapshot.qt-project.org/5.0/%s', None),
+    'qt5': ('http://qt-project.org/doc/qt-5.0/qtdoc/%s', None),
+    'qt5-snapshot': ('http://doc-snapshot.qt-project.org/5.0/qtdoc/%s', None),
     'guides-homepage': ('http://qt-project.org/wiki/Developer-Guides/%s', None),
-    'download': ('http://get.qt.nokia.com/developerguides/%s', None),
-    'qtquick-repo': ('http://publisher.europe.nokia.com/jpasion/snapshot/qtquick-phase2/%s', None),
-    'creator': ('http://doc.qt.nokia.com/qtcreator/%s', None),
-    'mobility': ('http://doc.qt.nokia.com/qt-mobility-snapshot/%s', None),
-    'component': ('http://doc.qt.nokia.com/qt-components-symbian-1.0/%s', None),
-    'component11': ('http://doc.qt.nokia.com/qtquick-components-symbian-1.1/%s', None),
-    'publish' : ('http://ed.europe.nokia.com/qmlbook/%s', None),
-    'installer': ('http://doc.qt.nokia.com/smart-installer/%s', None),
-    'jsondb': ('http://jsondb-docs.test.qt.nokia.com/gerrit/%s', None),
+    'download': ('http://releases.qt-project.org/learning/developerguides/%s', None),
+    'qtquick-repo': ('http://qt-project.org/doc/qt-4.8/%s', None),
+    'creator': ('http://qt-project.org/doc/qtcreator-2.6/%s', None),
+    'mobility': ('http://doc.qt.digia.com/qtmobility/%s', None),
+    'component': ('http://doc.qt.digia.com/qtquick-components-symbian-1.0/%s', None),
+    'component11': ('http://doc.qt.digia.com/qtquick-components-symbian-1.1/%s', None),
     }
 
 
@@ -75,7 +72,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'project'
-copyright = u'(C) 2012 Nokia. http://qt.nokia.com/learning'
+copyright = u'(C) 2012 Digia. http://qt.digia.com'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -224,7 +221,7 @@ latex_font_size = '12pt'
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'latex_document.tex', u'title in latex_docuements',
-   u'(C) 2012 Nokia. http://qt.nokia.com/learning', 'manual'),
+   u'(C) 2012 Digia. http://qt.digia.com/Product/Learning', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -277,7 +274,7 @@ PygmentsBridge.latex_formatter = CustomLatexFormatter
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'document_man_pages', u'title in man_pages',
-     [u'(C) 2011 Nokia. http://qt.nokia.com/learning'], 1)
+     [u'(C) 2011 Digia. http://qt.digia.com/Product/Learning'], 1)
 ]
 
 
@@ -289,7 +286,7 @@ epub_basename = 'document_epub_basename'
 # Bibliographic Dublin Core info.
 epub_title = u'epub_title'
 epub_author = u'Nokia, Qt Learning'
-epub_publisher = u'http://qt.nokia.com/learning'
+epub_publisher = u'http://qt.digia.com/Product/Learning/'
 epub_copyright = u'(C) 2011 Nokia'
 
 # The language of the text. It defaults to the language option

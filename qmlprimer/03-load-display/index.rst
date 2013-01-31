@@ -32,9 +32,9 @@ Loading external content can always end up with problems. Files get misplaced. T
                                         "\" cannot be loaded")
     }
 
-Our new font, ``LED_REAL.TTF``, is stored in the ``content`` folder, which is located in the same folder as our application. If for any reason it will not load, an error message will be posted on the console and the application will continue using a default font.
+Our new font, ``LED_REAL.TTF``, is stored in the ``content`` folder, which is located in the same folder as our application. If for any reason it does not load, an error message is posted on the console and the application  continues using a default font.
 
-Basic image parameters
+Basic Image Parameters
 ======================
 
 Loading images works almost the same way:
@@ -54,22 +54,22 @@ Loading images works almost the same way:
 
 We need to change a few image properties. The image should cover the entire surface of the top-level element (its parent). In many cases, filling a background is done with small images which just design a pattern. Scaling them to the size of background would change the pattern, and the background would not be the same as planned. In these cases, you set ``fillMode`` to ``Tile`` as shown in the code above.
 
-.. Topic:: Dealing with image sizes
+.. Topic:: Dealing with Image Sizes
 
-    Most of the visual properties of an image can be changed via its parent (:qt:`Item<qml-item.html>`) properties. Other :qt:`Image's<qml-image.html>` properties help handle critical image aspect - its size. If you deal with large images, you should set the ``sourceSize`` property to a size which you really need, otherwise the image will load in its full size. Is worth to notice the the difference between ``paintedHeight`` and ``height`` and between ``paintedWidht`` and ``width``. The     painted* property pairs describe the size of the area taken be the image when it is painted on the screen, whereas the another pair describes the loaded size of the image. Both can be different if the image is scaled. If you change the ``scale`` property inherited from :qt:`Item<qml-item.html>`, be aware of the impact of the ``fillMode`` property on the actual scaling result. The ``smooth`` property smoothens the edges of scaled images, but also incurs a performance cost. See :qt:`Image<qml-image.html>` documentation for more details.
+    Most of the visual properties of an image can be changed using its parent (:qt:`Item<qml-item.html>`) properties. Other :qt:`Image's<qml-image.html>` properties help handle critical image aspect - its size. If you deal with large images, you should set the ``sourceSize`` property to a size which you really need, otherwise the image loads in its full size. It is worth to notice the difference between ``paintedHeight`` and ``height``, and between ``paintedWidht`` and ``width``. The *painted* property pairs describe the size of the area taken by the image when it is painted on the screen, whereas the another pair describes the loaded size of the image. Both can be different if the image is scaled. If you change the ``scale`` property inherited from :qt:`Item<qml-item.html>`, be aware of the impact of the ``fillMode`` property on the actual scaling result. The ``smooth`` property smoothens the edges of scaled images, but also incurs a performance cost. See the :qt:`Image<qml-image.html>` documentation for more details.
 
-Basic text parameters
+Basic Text Parameters
 =====================
 
 In the first section, we loaded a custom LED-like font. We now need to assign it to the appropriate text elements. :qt:`Text<qml-text.html>` has a grouped ``font`` property. It has to be used to customize various font-related text properties. One of them, ``font.family``, holds the name of a font to be used.
 
-.. Topic:: Finding out which fonts are installed
+.. Topic:: Finding the Fonts Installed
 
-    Sometimes it might be tricky to find our which fonts are installed on your target system and how to spell their names right. A small example provided in Qt Quick :qt:`lists names of all available<declarative-text-fonts-fonts-qml-fonts-qml-availablefonts-qml.html>` rendered in their fonts.
+    Sometimes it might be tricky to find out which fonts are installed on your target system and how to spell their names right. A small example provided in Qt Quick :qt:`lists names of all available<declarative-text-fonts-fonts-qml-fonts-qml-availablefonts-qml.html>` rendered in their fonts.
 
-Other :qt:`Text<qml-text.html>` properties allow a broad variation of the visual appearance of a text. In our application, we will just use the ``color``, ``style`` and size-related properties.
+Other :qt:`Text<qml-text.html>` properties allow a broad variation of the visual appearance of a text. In our application, we use the ``color``, ``style``, and size-related properties.
 
-The customized text element for displaying time now looks like this:
+The customized text element for displaying time looks like this:
 
 .. code-block:: js
 
@@ -84,11 +84,11 @@ The customized text element for displaying time now looks like this:
         styleColor: "black"
     }
 
-Our plan is to implement as much flexibility as possible in the size and layout of all elements since we want to run our application on different screen sizes. This is why the code above binds the ``pixelSize`` of ``timeText`` to the height of the ``root`` element. This will scale the text whenever the height of ``root`` changes. There are ways to make it better, but the current version of Qt Quick unfortunately does not provide font metrics data in the font properties. If it were available, we could make the text size adapt to the width changes as well.
+Our plan is to implement as much flexibility as possible in the size and layout of all elements as we want to run our application on different screen sizes. This is why the code above binds the ``pixelSize`` of ``timeText`` to the height of the ``root`` element. This will scale the text whenever the height of ``root`` changes. There are ways to make it better, but the current version of Qt Quick unfortunately does not provide font metrics data in the font properties. If it were available, we could make the text size adapt to the width changes as well.
 
 In order to make the ``timeText`` element appear more attractive, we use some tricks for the visual appearance by setting ``style`` to ``Text.Raised`` and ``styleColor`` to ``"black"``. This detaches the text from the background so it seems like it's hovering over it.
 
-The :qt:`Text<qml-text.html>` element also provides basic layout controls (e.g. you can set how the text should be wrapped via ``wrapMode``). We will use this property later. The most important thing to note about text formatting is that :qt:`Text<qml-text.html>` supports :qt:`rich text<Qt's richtext-html-subset.html>` markup. This makes it possible to display one block of text in various formatting, colors, sizes etc.
+The :qt:`Text<qml-text.html>` element also provides basic layout controls (for example, you can set how the text should be wrapped using ``wrapMode``). We're going to use this property later. The most important thing to note about text formatting is that :qt:`Text<qml-text.html>` supports :qt:`rich text<Qt's richtext-html-subset.html>` markup. This makes it possible to display one block of text in various formatting, colors, sizes etc.
 
 The appearance of our application is now less boring:
 
@@ -100,9 +100,9 @@ The full source code is listed in the last section of this chapter.
 Get ready for translation
 =========================
 
-When starting to develop an application, it makes a lot of sense to have some basic thoughts about international versions even if you do not plan it for now. Qt provides a set of tools for this. Qt Quick uses them as a base. If you know and use the essential part of the tools already in the beginning of your development, it can save a lot of time later when your application becomes a complex system with a lot of code.
+When starting to develop an application, it makes a lot of sense to have some basic thoughts about international versions even if you do not plan for it now. Qt provides a set of tools which are used as the base by Qt Quick. If you know and use the essential part of the tools in the beginning of your development, it can save a lot of time later when your application becomes a complex system with a lot of code.
 
-Qt Quick provides almost the same APIs for translation as known in Qt Script, see the section :qt:`Produce Translations<scripting.html#produce-translations>` in the Qt documentation for more details. The major API is the ``qsTr()`` function, which should be used wrap all visual strings in an application. The     Hello World* greeting in our first application should then look like this:
+Qt Quick provides almost the same APIs for translation as in Qt Script. See the section, :qt:`Produce Translations<scripting.html#produce-translations>` for more details. The major API is the ``qsTr()`` function, which should be used to wrap all visual strings in an application. The *Hello World* greeting in our first application should then look like this:
 
 .. code-block:: js
 
@@ -124,25 +124,25 @@ Qt Quick provides almost the same APIs for translation as known in Qt Script, se
     }
 
 
-The application continues to run the same way as before using ``qsTr()``. You need to use the Qt translation tool chain to see translation in action. See the :qt:`QML Internationalization<qdeclarativei18n.html>` article for more details how to generate and integrate translation files. When translation files are available, there are three options for loading them in the current version of Qt Quick:
+The application continues to run the same way as before using ``qsTr()``. You need to use the Qt translation tool chain to see translation in action. See the :qt:`QML Internationalization<qdeclarativei18n.html>` article for more details about how to generate and integrate translation files. When translation files are available, there are three ways to load them:
 
-     by using the ``qmlviewer`` command line option ``-translate``
-     by placing them in the ``i18n`` sub-folder (see :qt:`this example<declarative-i18n.html>`)
-     by modifying the default behavior of the ``qmlviewer`` and loading QML and translation files in your own way (this is beyond of scope for this guide)
+* by using the ``qmlviewer`` command-line option ``-translate``
+* by placing them in the ``i18n`` sub-folder (see :qt:`this example<declarative-i18n.html>`)
+* by modifying the default behavior of the ``qmlviewer`` and loading QML and translation files in your own way (this is beyond of scope for this guide)
 
-If your plan is to make a version of an application for right-to-left languages, e.g. Arabic, please take a look at the :qt:`QML Right-to-left User Interfaces<qml-righttoleft.html>` article.
+If your plan is to make a version of an application for right-to-left languages, for example, Arabic, take a look at the :qt:`QML Right-to-left User Interfaces<qml-righttoleft.html>` article.
 
-.. Topic:: Switching languages after the application has started
+.. Topic:: Switching Languages at Runtime
 
-    Currently, there are no standard APIs to load a new language after a Qt Quick application has already started. It is still possible with some additional code. See this article on the Qt developer Wiki about possible workarounds: `"How to do dynamic translation in QML" <http://developer.qt.nokia.com/wiki/How_to_do_dynamic_translation_in_QML/>`_
+    Currently, there are no standard APIs to load a new language after a Qt Quick application has already started. It is still possible with some additional code. See this article on the Qt developer Wiki about possible workarounds: `"How to do dynamic translation in QML" <http://qt-project.org/wiki/How_to_do_dynamic_translation_in_QML/>`_
 
-If you are interested in more details, check the further readings about internationalization in Qt:
+If you are interested in more details, check these further readings about internationalization in Qt:
 
-     Qt documentation: :qt:`Writing Source Code for Translation<i18n-source-translation.html>`
-     Qt documentation: :qt:`Internationalization with Qt<internationalization.html>`
-     Qt developer Wiki: `"Qt Internationalization" article <http://developer.qt.nokia.com/wiki/QtInternationalization>`_
+* Qt documentation: :qt:`Writing Source Code for Translation<i18n-source-translation.html>`
+* Qt documentation: :qt:`Internationalization with Qt<internationalization.html>`
+* Qt developer Wiki: `"Qt Internationalization" article <http://qt-project.org/wiki/QtInternationalization>`_
 
-Static clock application code
+Static Clock Application Code
 =============================
 
 This is the code of our application including all enhancements as discussed in this chapter:
@@ -155,4 +155,4 @@ This is the code of our application including all enhancements as discussed in t
 
 .. rubric:: What's Next?
 
-Due to the tight relationship between JavaScript and Qt Quick we already used quite some script code in our examples. In the next chapter we will take a look on scripting in Qt Quick. A small script code will make our clock tick.
+In the next chapter we will take a look at scripting in Qt Quick. A small script code can make our clock tick.

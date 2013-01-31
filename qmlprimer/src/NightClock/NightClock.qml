@@ -90,7 +90,7 @@ Rectangle {
         id: ledFont
         // unfortunately, the font will not load on a Symbian device,
         // and the default font will be used:
-        // http://bugreports.qt.nokia.com/browse/QTBUG-6611
+        // http://bugreports.qt-project.org/browse/QTBUG-6611
         // The bug should be fixed in 4.8
         source: "../content/resources/font/LED_REAL.TTF"
         onStatusChanged: if (ledFont.status == FontLoader.Error)
