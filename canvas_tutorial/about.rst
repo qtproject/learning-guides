@@ -15,25 +15,23 @@ About this Guide
 Why Would You Want to Read this Guide?
 --------------------------------------
 
-The goal of this guide is to make you familiar with best programming practices using the Canvas Item in Qt Quick 2.0 as part of Qt 5.
-A prerequisite to this guide is to have a solid understanding of the QML language and also use the Qt Quick Application Development Primer as your first guide on how to use Qt Quick for application development. Throughout this guide, we’ll walk you through various aspects and examples of Qt Quick 2.0 Painting API with Canvas. References to other information sources are provided to make it easy for you to deepen your understanding of the used API.
+The goal of this guide is to inform you about the best programming practices using the Canvas type in Qt Quick 2.0.
+A prerequisite to this guide is to have a solid understanding of the QML language, so I recommend reading the Qt Quick Application Development Primer first to understand how to use Qt Quick for application development. Throughout this guide, we’ll walk you through various aspects and examples of Qt Quick 2.0 Painting API with Canvas. References to other information sources are provided to make it easy for you to deepen your understanding of the used API.
 
 .. _get-desktop-source-code:
 
 Get the Source Code and the Guide in Different Formats
 ------------------------------------------------------
 
-.. Todo: Change the download links
+A .zip file that contains the example source code referred in each chapter:
 
-A .zip file that contains the source code of each chapter is provided:
+     `Source code <http://releases.qt-project.org/learning/developerguides/canvastutorial/canvasexample_src.zip>`_
 
-     `Source code <http://get.qt.nokia.com/developerguides/canvastutorial/canvasexample_src.zip>`_
+The guide is available in the following offline formats:
 
-The guide is available in the following formats:
-
-     `PDF <http://get.qt.nokia.com/developerguides/canvastutorial/QtQuickCanvasTutorial.pdf>`_
-     `ePub <http://get.qt.nokia.com/developerguides/canvastutorial/QtQuickCanvasTutorial.epub>`_ for ebook readers. Further details can be found `here <http://en.wikipedia.org/wiki/EPUB#Software_reading_systems>`_.
-     `Qt Help <http://get.qt.nokia.com/developerguides/canvastutorial/QtQuickCanvasTutorial.qch>`_ for Qt Assistant and Qt Creator. In Qt Assistant under the :qt:`Preferences Dialog <assistant-details.html#preferences-dialog>`, in the `Documentation` tab (in a collapsible menu for Mac users), you click on the Add button in order to add this guide in the .qch format. We do the same in Qt Creator, under the `Options` dialog, in the `Help` section you, can add this guide in the `Documentation` tab.
+     `PDF <http://releases.qt-project.org/learning/developerguides/canvastutorial/QtQuickCanvasTutorial.pdf>`_
+     `ePub <http://releases.qt-project.org/learning/developerguides/QtQuickCanvasTutorial.epub>`_ for ebook readers. Further details can be found `here <http://en.wikipedia.org/wiki/EPUB#Software_reading_systems>`_.
+     `Qt Help <http://releases.qt-project.org/learning/developerguides/canvastutorial/QtQuickCanvasTutorial.qch>`_ for Qt Assistant and Qt Creator. In Qt Assistant, go to the :qt:`Preferences Dialog <assistant-details.html#preferences-dialog>`, in the `Documentation` tab (in a collapsible menu for Mac users), click on the `Add` button in order to add this guide in .qch format. Do the same in Qt Creator under the `Options` dialog. In the `Help` section, you can add this guide under the `Documentation` tab.
 
 
 License

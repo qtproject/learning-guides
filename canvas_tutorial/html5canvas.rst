@@ -15,13 +15,13 @@ Porting HTML5 Canvas Code to Qt Quick
 In this page, we want to show how easy it is to port existing HTML5 Canvas code to Qt Quick using the Canvas element.
 
 .. note::
-    A general list of the necessary changes can be found in `the Qt documentation pages of the Qt Quick Canvas <http://doc.qt.nokia.com/qt5-snapshot/qml-qtquick2-canvas.html>`_.
+    A general list of the necessary changes can be found in `the Qt documentation for :qt5-snapshot: Qt Quick Canvas <qtquick/qml-qtquick2-canvas.html>`_.
 
 
 The HTML5 Canvas Code
 ---------------------
 
-`This link <https://developer.mozilla.org/en/Canvas_tutorial/Transformations>`_ leads to an HTML5 Canvas tutorial, in which one of the examples shows a `spirograph <http://en.wikipedia.org/wiki/Spirograph>`_.
+We are going to port the `spirograph <http://en.wikipedia.org/wiki/Spirograph>`_ example used in this `HTML5 Canvas Tutorial <https://developer.mozilla.org/en/Canvas_tutorial/Transformations>`_.
 
 The HTML5 code looks like this:
 
@@ -32,12 +32,12 @@ The HTML5 code looks like this:
 The Qt Quick Canvas Code
 ------------------------
 
-To use this code in a Qt Quick Canvas, we can almost simply copy the HTML5 code's drawing function into the Canvas element's ``onPaint`` handler. We only need to change the line in which we acquire the drawing context: instead of using a DOM API call (``document.getElementById('canvas')``), we access the canvas element directly. The used JavaScript function can be inserted as a member function of the element.
+To port this code to a Qt Quick application, we can copy the code for drawing function into the ``onPaint`` handler of Qt Quick Canvas. We only need to change the line in which we acquire the drawing context: instead of using a DOM API call (``document.getElementById('canvas')``), we access the canvas directly. The JavaScript function can be inserted as a member function of the canvas.
 
 .. literalinclude:: src/spirograph.qml
     :language: js
 
-This is what the application looks like:
+This is how the ported Qt Quick application looks like:
 
 .. image:: img/spirograph.png
     :scale: 50%

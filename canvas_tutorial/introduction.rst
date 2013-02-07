@@ -12,19 +12,19 @@
 Introduction
 ============
 
-If you want to draw custom graphics from within your Qt Quick application, the `Qt Quick Canvas <http://doc.qt.nokia.com/qt5-snapshot/qml-qtquick2-canvas.html>`_ item is your item of choice.
+If you want to draw custom graphics within your Qt Quick application, the :qt5-snapshot:`Qt Quick Canvas <qtquick/qml-qtquick2-canvas.html>`_ item is your choice.
 
-The Canvas element was introduced in Qt Quick 2.0 and provides an area on which you can draw using JavaScript code. It uses a high level command-set based on `the HTML5 Canvas specification <http://www.w3.org/TR/html5/the-canvas-element.html>`_, which allows you to draw basic and complex shapes, add coloring, gradients, shadows, images, text etc, but also grants access to low level pixel data. The employment of JavaScript facilitates the presentation of dynamic content.
+The Canvas type was introduced in Qt Quick 2.0 and provides an area in which you can draw using JavaScript. It uses a high-level command-set based on `the HTML5 Canvas specification <http://www.w3.org/TR/html5/the-canvas-element.html>`_. The Canvas type allows you to draw basic and complex shapes, add color, gradients, shadows, images, text, and access low-level pixel data. Using JavaScript, facilitates the presentation of dynamic content.
 
-After a brief introduction to the Canvas element, we'll develop an interactive pie chart visualization. Later in this guide, we'll see how to port existing HTML5 Canvas code to a Qt Quick 2 application.
+After a brief introduction to the Canvas type, we'll develop an interactive pie chart visualization. Later in this guide, we'll see how to port existing HTML5 Canvas code to a Qt Quick 2 application.
 
-This tutorial introduces you to the Qt Quick Canvas using self contained example programs and is not meant to show each and every aspect of this element. A detailed description of the Canvas and its supported rendering commands can be found in the Qt documentation pages (see: `Canvas <http://doc.qt.nokia.com/qt5-snapshot/qml-qtquick2-canvas.html>`_, `Context2D <http://doc.qt.nokia.com/qt5-snapshot/qml-qtquick2-context2d.html>`_). Also note, that a huge number of very good HTML5 Canvas API tutorials is available on the internet. Since the Qt Quick Canvas element implements this command-set, these tutorials can serve as an excellent starting point to learn drawing. We provide a few links at `the end of this tutorial <conclusion.html>`_. We also assume that you are already familiar with Qt Quick in general, as this tutorial will use non Canvas related features without further notice.
+This tutorial introduces you to the Qt Quick Canvas using example programs and is not meant to show each and every aspect of this type. A detailed description of the Canvas type and its supported rendering commands can be found in the Qt documentation pages (:qt5-snapshot:`Canvas <qtquick/qml-qtquick2-canvas.html>`_, :qt5-snapshot:`Context2D <qtquick/qml-qtquick2-context2d.html>`_). Also note that a large number of good HTML5 Canvas API tutorials are available on the internet. As the Qt Quick Canvas type is based on the HTML5 specification, these tutorials can serve as an excellent starting point to learn drawing. We have listed a few of those tutorials at `the end of this tutorial <conclusion.html>`_. We also assume that you are already familiar with Qt Quick in general, as this tutorial does refer to some the non-Canvas features.
 
 
 A Basic Example
 ---------------
 
-The Qt Quick Canvas element is the element that you place in your application to draw upon. The actual drawing as well as the resource handling is done by its associated `Context2D <http://doc.qt.nokia.com/qt5-snapshot/qml-qtquick2-context2d.html>`_. This element provides the drawing API and manages the transformation stack and style state. It also lets you customize some of its internals such as multithreading, tiling and the usage of hardware acceleration.
+The Qt Quick Canvas type provides a place in your application to draw upon. The actual drawing as well as the resource handling is done by its associated :qt5-snapshot:`Context2D <qtquick/qml-qtquick2-context2d.html>`_ type, which provides the drawing API and manages the transformation stack and style state. It also lets you customize some of its internals such as multithreading, tiling, and the usage of hardware acceleration.
 
 Let's start with a simple example: a small piece of code that displays a colored rectangle:
 
@@ -36,10 +36,10 @@ This is the source code:
 .. literalinclude:: src/canvas.qml
     :language: js
 
-The usual way is to declare a ``Canvas`` element and place the drawing commands inside its ``onPaint`` handler. After acquiring the drawing context, we prepare a rectangular path using ``rect(real x, real y, real w, real h)``. Then we setup the fill color state to a yellow color using ``fillStyle`` and fill the rectangle by calling ``fill()``. The green border of the rectangle is drawn by setting ``strokeStyle`` and calling ``stroke()`` respectively. ``lineWidth`` sets the width of the stroke.
+The usual way is to declare a ``Canvas`` type and place the drawing commands inside its ``onPaint`` handler. After acquiring the drawing context, we prepare a rectangular path using ``rect(real x, real y, real w, real h)``. Then we set up the fill color state to yellow using ``fillStyle`` and fill the rectangle by calling ``fill()``. The green border of the rectangle is drawn by setting ``strokeStyle`` and calling ``stroke()`` respectively. The ``lineWidth`` property sets the width of the stroke.
 
 .. note::
-    The order of ``stroke()`` and ``fill()`` matters: The stroke pattern is drawn centered along the path (in this example with a 2 px width pattern to the left side and a 2 px width pattern to the right side). If we used ``stroke()`` before calling ``fill()``, the fill would over paint the inner part of the border resulting in a 2 px wide border.
+    The order of ``stroke()`` and ``fill()`` matters: The stroke pattern is drawn centered along the path (in this example with a 2 px width pattern to the left side and a 2 px width pattern to the right side). If we call ``stroke()`` before ``fill()``, ``fill()`` would over paint the inner part of the border resulting in a 2 px wide border.
 
 
 Essential Context2D Properties / Methods
@@ -63,9 +63,9 @@ Transformation     translate(x, y)                    Move coordinate system
 Transformation     rotate(angle)                      Rotate coordinate system
 Transformation     scale(x, y)                        Scale coordinate system
 Transformation     shear(sh, sv)                      Shear coordinate system
-Style              strokeStyle                        Setup line style
-Style              lineWidth                          Setup line width
-Style              fillStyle                          Setup fill style
+Style              strokeStyle                        Set up line style
+Style              lineWidth                          Set up line width
+Style              fillStyle                          Set up fill style
 Drawing            stroke()                           Draw path using style
 Drawing            fill()                             Fill path using style
 ================== ================================== =========================
