@@ -28,7 +28,7 @@ htmlhelp_basename = 'OpenGLTutorial'
 
 latex_documents = [
   ('index', 'OpenGLTutorial.tex', u'OpenGL Tutorial',
-   u'Nokia, Qt Learning', 'manual'),
+   u'Digia, Qt Learning', 'manual'),
 ]
 
 # -- Options for Epub output ---------------------------------------------------

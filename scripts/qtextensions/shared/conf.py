@@ -55,6 +55,7 @@ extlinks = {
     'mobility': ('http://doc.qt.digia.com/qtmobility/%s', None),
     'component': ('http://doc.qt.digia.com/qtquick-components-symbian-1.0/%s', None),
     'component11': ('http://doc.qt.digia.com/qtquick-components-symbian-1.1/%s', None),
+    'installer': ('http://doc.qt.digia.com/smart-installer/%s', None),
     }
 
 

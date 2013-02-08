@@ -15,7 +15,7 @@ About this Tutorial
 Why Would You Want to Read this Guide?
 --------------------------------------
 
-This tutorial provides a basic introduction to OpenGL and 3D computer graphics in general. It shows how to make use of Qt and its OpenGL related classes to create 3D graphics by using OpenGL's programmable pipeline. The tutorial provides many examples that go through the basic features of OpenGL programming like rendering, texture mapping, lighting etc. By the end of the tutorial, you will have a good understanding about how OpenGL works and you will also be able to write custom shader programs.
+This tutorial provides a basic introduction to OpenGL and 3D computer graphics. It shows how to make use of Qt and its OpenGL related classes to create 3D graphics by using OpenGL's programmable pipeline. The tutorial provides many examples that demonstrate the basic features of OpenGL programming such as rendering, texture mapping, lighting, and so on. By the end of the tutorial, you will have a good understanding about how OpenGL works and you will also be able to write custom shader programs.
 
 
 .. image:: images/opengl-example-lighting.png
@@ -35,7 +35,8 @@ The guide is available in the following formats:
      :download:`PDF <qtopengltutorial/OpenGLTutorial.pdf>`
 
      :download:`ePub <qtopengltutorial/OpenGLTutorial.epub>` for ebook readers. Further details can be found `here <http://en.wikipedia.org/wiki/EPUB#Software_reading_systems>`_.
-     :download:`Qt Help <qtopengltutorial/OpenGLTutorial.qch>` for Qt Assistant and Qt Creator. In Qt Assistant, in the :qt:`Preferences Dialog <assistant-details.html#preferences-dialog>` under the `Documentation` tab (in a collapsible menu for Mac users), you click on the `Add` button in order to add this guide in .qch format. We do the same in Qt Creator under the `Options` dialog in the `Help` section. Here you can add this guide in the `Documentation` tab.
+
+     :download:`Qt Help <qtopengltutorial/OpenGLTutorial.qch>` for Qt Assistant and Qt Creator. In Qt Assistant, in the :qt:`Preferences Dialog <assistant-details.html#preferences-dialog>` under the `Documentation` tab (in a collapsible menu for Mac users), click the `Add` button to add this guide in .qch format. We do the same in Qt Creator under the `Options` dialog in the `Help` section. Here you can add this guide in the `Documentation` tab.
 
 
 License
