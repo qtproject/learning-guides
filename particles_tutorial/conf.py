@@ -32,7 +32,7 @@ htmlhelp_basename = 'ParticlesTutorial'
 
 latex_documents = [
   ('index', 'ParticlesTutorial.tex', u'Particles and Graphics Effects in Qt Quick 2',
-   u'Nokia, Qt Learning', 'manual'),
+   u'Digia, Qt Learning', 'manual'),
 ]
 
 # -- Options for Epub output ---------------------------------------------------

@@ -12,22 +12,22 @@
 Demo Application
 ================
 
-In order to have a better understanding of how to use ``Particles``  and ``ShaderEffect``, we will implement an example that illustrates their use to create some animations and graphic effects.
+In order to have a better understanding of how to use ``Particles``  and ``ShaderEffect``, we will implement an example that illustrates their use to create some animations and graphical effects.
 
 In this chapter, we will implement a simple demo that consists of four background images corresponding to one of the four seasons with special animations for each season. The idea is to show you different ways and techniques of making nice animations and graphic effects using particles and shaders.
 
-Almost all animations are implemented using particle effects. We will, however, add some animations using shader effects. We will create four special animations, each having its own ``Emitter`` and ``ParticlesImage`` elements with different settings that will correspond to the four seasons of the year. The following figure presents a screenshot of the final implementation:
+Almost all animations are implemented using particle effects. However, we add some animations using shader effects. We will create four special animations, each having its own ``Emitter`` and ``ParticlesImage`` types with different settings that correspond to the four seasons of the year. The following figure presents a screenshot of the final implementation:
 
 .. image:: images/seasons4.png
     :scale: 60%
     :align: center
 
-In order to easily follow the steps of our implementation, this tutorial is split into several sections. Each section covers the ``Emitter`` and ``ParticlesImage`` elements (as well as other elements) associated with each season.
+In order to easily follow the steps of our implementation, this tutorial is split into several sections. Each section covers the ``Emitter`` and ``ParticlesImage`` types (as well as other elements) associated with each season.
 
 The Main Element
 ----------------
 
-The application consists of a ``Rectangle`` element with an ``Image`` that displays different backgrounds. Each background image corresponds to a season. For each season, we  associate special animations based on `Particles`. We additionally add an animation when switching from one season to another.
+The application consists of a ``Rectangle`` type with an ``Image`` that displays different backgrounds. Each background image corresponds to a season. For each season, we  associate special animations based on `Particles`. We additionally add an animation when switching from one season to another.
 
 Background
 ----------
@@ -43,7 +43,7 @@ The main rectangle displays an image for each season. Let's start by implemeting
 
         width: 600
         height: 600
-        // enbale keybord events
+        // enable keyboard events
         focus: true
 
         Image {
@@ -129,7 +129,7 @@ Then we define a function to switch between seasons. Each function should set th
 
     function toAutumn() {
         state = "autumn"
-        // Apply winter animation later ...
+        // Apply autumn animation later ...
 
     }
 
@@ -142,7 +142,7 @@ Then we define a function to switch between seasons. Each function should set th
 
 
 
-Once the background image has been changed, we add a ``NumberAnimation`` that modifies the image's scale and opacity. For more details concerning animations in QML, please refer to the related `API Documentation <http://doc.qt.nokia.com/4.7-snapshot/qdeclarativeanimation.html>`_.
+Once the background image has been changed, we add a ``NumberAnimation`` that modifies the image's scale and opacity. For more details concerning animations in QML, refer to the :qt5:`NumberAnimation Documentation <qtquick/qml-qtquick2-numberanimation.html>`.
 
 To switch between the season's background, the user can simply press the ``space`` key on the keyboard:
 
@@ -177,7 +177,7 @@ In the `winter` state, we want to display some snow particles falling down from 
 
     ParticleSystem { id: sysSeason  }
 
-Then we add a ``ParticleImage`` element that visualizes logical particles using an image. In our case, the image should correspond to a snow particle. We also specify the system whose particles should be visualized and a group property to specify which logical particle group will be painted. This is helpful if we want to use different emitters within the same ``ParticleSystem``:
+Then we add a ``ParticleImage`` type that visualizes logical particles using an image. In our case, the image should correspond to a snow particle. We also specify the system whose particles should be visualized and a group property to specify which logical particle group will be painted. This is helpful if we want to use different emitters within the same ``ParticleSystem``:
 
 .. code-block:: js
 
@@ -189,13 +189,13 @@ Then we add a ``ParticleImage`` element that visualizes logical particles using 
     }
 
 
-To emit particles, we add an ``Emitter`` element that emits our snow particles from the top window down to the bottom using an ``AngleDirection`` with a 90° angle:
+To emit particles, we add an ``Emitter`` type that emits our snow particles from the top window down to the bottom using an ``AngleDirection`` with a 90° angle:
 
 .. code-block:: js
 
     Emitter {
         id: snowEmitter
-        // Enable the emitter since winter is the default state
+        // Enable the emitter as winter is the default state
         enabled: true
         system: sysSeason
         group: "A"
@@ -205,7 +205,7 @@ To emit particles, we add an ``Emitter`` element that emits our snow particles f
             right: parent.right
             top: parent.top
         }
-        speed: AngleDirection { angle: 90;
+        velocity: AngleDirection { angle: 90;
                                 angleVariation : 20;
                                 magnitude: 100 }
         size: 20
@@ -245,7 +245,7 @@ In the Spring season, we want to display some flower and butterfly particles fro
         groups: ["B"]
     }
 
-Since the particles should be emitted from different places, we will be using two emitters. In each ``Emitter``, we specify the logical particles group.
+As the particles should be emitted from different places, we will be using two emitters. In each ``Emitter``, we specify the logical particles group.
 
 In the butterFly ``Emitter``, we specify a group and emit the particles from the bottom right corner:
 
@@ -258,7 +258,7 @@ In the butterFly ``Emitter``, we specify a group and emit the particles from the
         lifeSpan: 5000
         group: "C"
         anchors.bottom: parent.bottom
-        speed : AngleDirection { angle : 300;
+        velocity : AngleDirection { angle : 300;
                                  angleVariation: 30;
                                  magnitude: 100 }
         size: 50
@@ -277,7 +277,7 @@ In ``flowerEmitter``, we use the same code as in ``butterFlyEmitter``, but with 
         group: "B"
         anchors.bottom: parent.bottom
         anchors.right: parent.right
-        speed : AngleDirection { angle : 250;
+        velocity : AngleDirection { angle : 250;
                                  angleVariation: 40;
                                  magnitude: 100 }
         size: 50
@@ -321,7 +321,7 @@ For the sun animation, we define an ``Emitter`` that emits particles using ``Ang
         group: "G"
         y: parent.height / 4
         emitRate: 1600
-        acceleration : AngleDirection { angleVariation : 360 ;
+        velocity : AngleDirection { angleVariation : 360 ;
                                         magnitude: 80}
         size: 100
         sizeVariation: 50
@@ -377,13 +377,12 @@ We add the `ImageParticle` to paint the particle using an image.
         groups: ["G"]
     }
 
-Then we add the firework animation effect using ``Emitter``, ``TrailEmitter``, ``GroupGoal``, ``ParticlesGroup`` and ``ImageParticles`` elements as we have seen before in the ``Particles`` article.
+Then we add the firework animation effect using the ``Emitter``, ``TrailEmitter``, ``GroupGoal``, ``ParticlesGroup`` and ``ImageParticles`` types as we have seen before in the ``Particles`` article.
 
 .. code-block:: js
 
     // ImageParticle to render the firework particles
     ImageParticle {
-        id: firework
         system: sysSeason
         id: fireWorkParticle
         source: "resources/particle.png"
@@ -400,7 +399,7 @@ Then we add the firework animation effect using ``Emitter``, ``TrailEmitter``, `
         lifeSpan: 3000
         anchors.bottom: parent.bottom
         width: parent.width
-        speed : PointDirection {y: -120 ; xVariation: 16}
+        velocity : PointDirection {y: -120 ; xVariation: 16}
         size: 20
         GroupGoal {
             groups: ["D"]
@@ -421,7 +420,7 @@ Then we add the firework animation effect using ``Emitter``, ``TrailEmitter``, `
         enabled: false
         anchors.fill: parent
         emitRatePerParticle: 80
-        speed: PointDirection {yVariation: 16; xVariation: 5}
+        velocity: PointDirection {yVariation: 16; xVariation: 5}
         acceleration: PointDirection {y: -16}
     }
 
@@ -438,7 +437,7 @@ Then we add the firework animation effect using ``Emitter``, ``TrailEmitter``, `
             group: "F"
             emitRatePerParticle: 80
             lifeSpan: 2000
-            speed: AngleDirection {magnitude: 64; angleVariation: 360}
+            velocity: AngleDirection {magnitude: 64; angleVariation: 360}
         }
 
     }
@@ -483,7 +482,7 @@ In Autumn, we want to display some leaves falling down from the top of the windo
             right: parent.right
             top: parent.top
         }
-        speed : AngleDirection { angle: 90;
+        velocity : AngleDirection { angle: 90;
                                  angleVariation : 20;
                                  magnitude: 100 }
         size: 40
@@ -502,7 +501,7 @@ Then we add an `ImageParticle` to render the leaf particles using an image. The 
     }
 
 
-To add some effects, we will use an `Affector` that will generate a wind effect. For this, we will be using the :qt5-snapshot:`Wander <qml-qtquick-particles2-wander.html>` affector that allows particles to randomly vary their trajectory:
+To add some effects, we will use an `Affector` that will generate a wind effect. For this, we will be using the :qt5:`Wander <qtquick/qml-qtquick-particles2-wander.html>` affector that allows particles to randomly vary their trajectory:
 
 
 .. code-block:: js
@@ -522,7 +521,6 @@ And That's it! Now we just need to disable the previous emitter and enable the `
 
         function toAutumn() {
 
-        print("toAutumn...")
         state = "autumn"
 
         summerEmitter.enabled = false
@@ -572,7 +570,7 @@ Now we want to display a hot air balloon moving up from the bottom of the window
         NumberAnimation on y {  id: ballonAnimation;
                                 running: false;
                                 from: root.height;
-                                to: - height    2;
+                                to: - height * 2;
                                 duration: 15000 }
     }
 
@@ -587,7 +585,7 @@ Now we want to display a hot air balloon moving up from the bottom of the window
         source: "resources/welcome.png";
     }
 
-To simulate the wind effect on the flag, we add a fragment shader program via the ``ShaderEffect`` element:
+To simulate the wind effect on the flag, we add a fragment shader program via the ``ShaderEffect`` type:
 
 
 .. code-block:: js
@@ -602,7 +600,7 @@ To simulate the wind effect on the flag, we add a fragment shader program via th
 
         NumberAnimation on time { loops: Animation.Infinite;
                                   from: 0;
-                                  to: Math.PI      2;
+                                  to: Math.PI * 2;
                                   duration: 600 }
 
         fragmentShader:
@@ -613,10 +611,10 @@ To simulate the wind effect on the flag, we add a fragment shader program via th
              uniform highp float time;
              uniform sampler2D source;
              varying highp vec2 qt_TexCoord0;
-             void main()
-                highp vec2 p = sin(time + frequency      qt_TexCoord0);
+             void main() {
+                highp vec2 p = sin(time + frequency * qt_TexCoord0);
                 gl_FragColor = texture2D(source, qt_TexCoord0  +
-                            amplitude      vec2(p.y, -p.x)) * qt_Opacity;
+                            amplitude * vec2(p.y, -p.x)) * qt_Opacity;
              }";
     }
 
@@ -641,13 +639,10 @@ Now if you run the code, you should be able to visualize the air balloon animati
 Summary
 -------
 
-In this tutorial, we went through the `Particles` module in Qt Quick and the use of `Shaders` to apply advanced animation effects. We also provided an example combining those technics. For more details concerning `Particles` and `Shaders` effect, please refer to official Qt Documentation.
+In this tutorial, we went through the `Particles` module in Qt Quick and the use of `Shaders` to apply advanced animation effects. We also provided an example combining those technics. For more details concerning `Particles` and `Shaders` effects, refer to these links:
 
-Related Links
--------------
+* http://qt-project.org/doc/qt-5.0/qtquick/qtquick-particles2-qml-particlesystem.html
 
-http://doc-snapshot.qt-project.org/5.0/qtquick-particles2-qml-particlesystem.html
+* http://qt-project.org/doc/qt-5.0/qtmultimedia/multimedia-video-qmlvideofx.html
 
-http://doc-snapshot.qt-project.org/5.0/video-qmlvideofx.html
-
-http://www.lighthouse3d.com/opengl/glsl/
+* http://www.lighthouse3d.com/opengl/glsl/

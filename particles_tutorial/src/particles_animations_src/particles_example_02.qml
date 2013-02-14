@@ -58,7 +58,7 @@ Rectangle {
             anchors.bottom: parent.bottom
             anchors.horizontalCenter: parent.horizontalCenter
 
-            speed : AngleDirection { angle: 270; angleVariation: 10; magnitude: 100}
+            velocity : AngleDirection { angle: 270; angleVariation: 10; magnitude: 100}
             lifeSpan: 8000
             sizeVariation: 5
 

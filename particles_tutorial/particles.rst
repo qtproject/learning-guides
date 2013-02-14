@@ -15,28 +15,28 @@ Particles
 Overview
 --------
 
-Qt Quick 2 comes with the `Particles` module for making nice visual particle effects which can be used by many applications that require a lot of tiny moving particles such as fire simualtion, smoke, stars, music visualization etc.
+Qt Quick 2 comes with the `Particles` module for making nice visual particle effects, which can be used by many applications that require a lot of tiny moving particles such as fire simualtion, smoke, stars, music visualization, and so on.
 
-The :qt5-snapshot:`Particles <qtquick-particles2-qml-particlesystem.html>` module is based on four major components:
+The :qt5:`Particles <qtquick/qtquick-particles2-qml-particlesystem.html>` module is based on four major components:
 
 .. image:: images/particles-module.png
     :align: center
     :scale: 60%
 
-     The ``ParticleSystem`` ties all the elements together and runs the system timers. ``Painters``, ``Emitters`` and `Affectors` should all have the same `ParticleSystem` to interact with each other.
+     * The ``ParticleSystem`` ties all the elements together and runs the system timers. ``Painters``, ``Emitters`` and `Affectors` should all have the same `ParticleSystem` to interact with each other.
 
-     The :qt5-snapshot:`PariclePainter <qml-qtquick-particles2-particlepainter.html>` enables the rendering of particles that can be image items or custom shaders.
+     * The :qt5:`PariclePainter <qtquick/qml-qtquick-particles2-particlepainter.html>` enables the rendering of particles that can be image items or custom shaders.
 
-     The :qt5-snapshot:`Emitter <qml-qtquick-particles2-emitter.html>` emits the particle objects into the system from the location of the emitter itself and controls some particle properties (`lifeSpan`, `size` etc).
+     * The :qt5:`Emitter <qtquick/qml-qtquick-particles2-emitter.html>` emits the particle objects into the system from the location of the emitter itself and controls some particle properties (`lifeSpan`, `size` etc).
 
-     The :qt5-snapshot:`Affector <qml-qtquick-particles2-affector.html>` is an optional element that alters the attributes of particles after being created in order to manipulate the simulation (e.g. modifying the trajectroty, applying gravity effects etc).
+     * The :qt5:`Affector <qtquick/qml-qtquick-particles2-affector.html>` is an optional type that alters the attributes of particles after being created in order to manipulate the simulation (for example, modifying the trajectroty, applying gravity effects, and so on).
 
 Basic Setup
 -----------
 
-Let's start with a simple example that illustrates how we can use those elements together to make particle effects.
+Let's start with a simple example that illustrates how we can use those different elements together to make particle effects.
 
-The following example implements a simple rectangle with a ``ParticleSystem`` element that contains an :qt5-snapshot:`ImageParticle <qml-qtquick-particles2-imageparticle.html>` which renders particles based on an image, as well as an ``Emitter`` that creates and emits particles.
+The following example implements a simple rectangle with a ``ParticleSystem`` type that contains an :qt5:`ImageParticle <qtquick/qml-qtquick-particles2-imageparticle.html>` to render particles based on an image, and an ``Emitter`` to create and emit particles.
 
 .. code-block:: js
 
@@ -73,9 +73,9 @@ If you run the code shown above, you will see a couple of tiny particles (based 
     :align: center
     :scale: 60%
 
-The particles are emitted all over the entire area of the parent because we set the emitter's anchors to fill the entire area of the root element (i.e. the rectangle).
+The particles are emitted all over the entire area of the parent because we set the emitter's anchors to fill the entire area of the root element (that is, the rectangle).
 
-To make the animation more intersting, we may want to make all particles emit from the bottom of the window and spread out with an increased :qt5-snapshot:`lifeSpan <qml-qtquick-particles2-emitter.html#lifeSpan-prop>`.
+To make the animation more intersting, we may want to make all particles emit from the bottom of the window and spread out with an increased :qt5:`lifeSpan <qtquick/qml-qtquick-particles2-emitter.html#lifeSpan-prop>`.
 
 First we set the emitter's anchors and specify where we want the particles to be emitted from.
 
@@ -87,13 +87,13 @@ First we set the emitter's anchors and specify where we want the particles to be
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
-Then we set the trajectory and speed of the particles using :qt5-snapshot:`AngleDirection <qml-qtquick-particles2-angledirection.html>` QML element.
+Then we set the trajectory and speed of the particles using :qt5:`AngleDirection <qtquick/qml-qtquick-particles2-angledirection.html>` QML type.
 
 .. code-block:: js
 
     Emitter {
         ...
-        speed:  AngleDirection {
+        velocity:  AngleDirection {
             // Make particles spread out vertically from the bottom
             angle: 270
             // make the movement of the particles slighly different from
@@ -105,7 +105,7 @@ Then we set the trajectory and speed of the particles using :qt5-snapshot:`Angle
         ...
     }
 
-Since the default ``lifeSpan`` property value of the particle is set to one second, we will increase its value so that we can visualize the particles path:
+As the default ``lifeSpan`` for a particle is one second, we will increase its value so that we can visualize the particles path:
 
 .. code-block:: js
 
@@ -115,7 +115,7 @@ Since the default ``lifeSpan`` property value of the particle is set to one seco
         lifeSpan: 8000
     }
 
-We can also set the particles to emit in various sizes by using the :qt5-snapshot:`sizeVariation <qml-qtquick-particles2-emitter.html#sizeVariation-prop>` property in the ``Emitter`` component:
+We can also set the particles to emit in various sizes by using the :qt5:`sizeVariation <qtquick/qml-qtquick-particles2-emitter.html#sizeVariation-prop>` property in the ``Emitter`` component:
 
 .. code-block:: js
 
@@ -126,7 +126,7 @@ We can also set the particles to emit in various sizes by using the :qt5-snapsho
     }
 
 
-The `colorVariation <http://doc-snapshot.qt-project.org/5.0/qml-qtquick-particles2-imageparticle.html#colorVariation-prop>`_ property in the ``ImageParticle`` element enables us to apply color variation to the particles:
+The :qt5:`colorVariation <qtquick/qml-qtquick-particles2-imageparticle.html#colorVariation-prop>` property in the ``ImageParticle`` type enables us to apply color variation to the particles:
 
 .. code-block:: js
 
@@ -136,7 +136,7 @@ The `colorVariation <http://doc-snapshot.qt-project.org/5.0/qml-qtquick-particle
         colorVariation: 1.0
     }
 
-Then we can use the :qt5-snapshot:`Gravity <qml-qtquick-particles2-gravity.html>` affector to make our particles fall back down.
+Then we can use the :qt5:`Gravity <qtquick/qml-qtquick-particles2-gravity.html>` affector to make our particles fall back down.
 
 .. code-block:: js
 
@@ -159,16 +159,16 @@ If you now run the code, you will see an animation displaying particles of diffe
     :align: center
     :scale: 60%
 
-.. note:: The full code is available in the `particles_example_02.qml` file.
+.. note:: The complete code is available in the `particles_example_02.qml` file.
 
 
 
 ParticleGroups and Transitions
 ------------------------------
 
-The `Particles` module also provides a :qt5-snapshot:`ParticleGroup <qml-qtquick-particles2-particlegroup.html>` element that enables us to set timed transitions on particle groups. This could be very helpful if we want to implement animations with special behavior that require many transitions.
+The `Particles` module also provides a :qt5:`ParticleGroup <qtquick/qml-qtquick-particles2-particlegroup.html>` type that enables us to set timed transitions on particle groups. This could be very helpful if we want to implement animations with special behavior that require many transitions.
 
-To illusrate how we can use ``ParticleGroup``, let's implement a simple fireworks animation. The particles should be emitted from the bottom of the window. We'll also add some :qt5-snapshot:`TrailEmitters <qml-qtquick-particles2-trailemitter.html>` that will simulate smoke produced by flames as well as explosions in mid-air.
+To illusrate how we can use ``ParticleGroup``, let's implement a simple fireworks animation. The particles should be emitted from the bottom of the window. We'll also add some :qt5:`TrailEmitters <qtquick/qml-qtquick-particles2-trailemitter.html>` that simulates smoke produced by flames as well as explosions in mid-air.
 
 In our fireworks animation we proceed as follows:
 
@@ -178,7 +178,7 @@ In our fireworks animation we proceed as follows:
 
      Add a ``TrailEmitter`` that will simulate the smoke produced by the flame. We also specify a logical group so that we can later assign the corresponding ``ParticlePainter`` to the emitter.
 
-     Add a ``ParticleGroup`` to simulate the explosion using an ``TrailEmitter`` element.
+     Add a ``ParticleGroup`` to simulate the explosion using a ``TrailEmitter`` type.
 
      Add a ``GroupGoal`` in the main ``Emitter`` to tell where or when to apply the transition we define in the ``ParticleGroup``.
 
@@ -220,7 +220,7 @@ So first, we declare one main ``Emitter`` that emits firework particles from the
                 bottom: parent.bottom
             }
 
-            speed:  AngleDirection {
+            velocity:  AngleDirection {
                         angle: 270
                         angleVariation: 10
                         magnitude: 200
@@ -229,7 +229,7 @@ So first, we declare one main ``Emitter`` that emits firework particles from the
     }
 
 
-Then we add a ``TrailEmitter`` element to simulate the smoke produced by the firework before exploding in the air.
+Then we add a ``TrailEmitter`` type to simulate the smoke produced by the firework before exploding in the air.
 
 .. code-block:: js
 
@@ -240,12 +240,12 @@ Then we add a ``TrailEmitter`` element to simulate the smoke produced by the fir
         follow: "A"
         size: 12
         emitRatePerParticle: 50
-        speed: PointDirection {yVariation: 10; xVariation: 10}
+        velocity: PointDirection {yVariation: 10; xVariation: 10}
         acceleration: PointDirection {y:  10}
     }
 
 
-Then we add a ``ParticleGroup`` element to set a transition and simulate the explosion of particles in the air. We will be using a ``TrailEmitter`` with an ``AngleDirection`` to display the exploding effect.
+Then we add a ``ParticleGroup`` type to set a transition and simulate the explosion of particles in the air. We will be using a ``TrailEmitter`` with an ``AngleDirection`` to display the exploding effect.
 
 .. code-block:: js
 
@@ -261,12 +261,12 @@ Then we add a ``ParticleGroup`` element to set a transition and simulate the exp
             lifeSpan: 1000
             emitRatePerParticle: 80
             size: 10
-            speed: AngleDirection {angleVariation: 360; magnitude: 100}
+            velocity: AngleDirection {angleVariation: 360; magnitude: 100}
             acceleration: PointDirection {y:  20}
         }
     }
 
-In order to know exactly where to apply the transition, we add a :qt5-snapshot:`GroupGoal <qml-qtquick-particles2-groupgoal.html>` element inside the `fireWorkEmitter` that tells the emitter what the aimed state is and when/where the particles should switch to it.
+In order to know exactly where to apply the transition, we add a :qt5:`GroupGoal <qtquick/qml-qtquick-particles2-groupgoal.html>` type inside the `fireWorkEmitter` that tells the emitter what the aimed state is and when/where the particles should switch to it.
 
 .. code-block:: js
 
@@ -289,7 +289,7 @@ In order to know exactly where to apply the transition, we add a :qt5-snapshot:`
         }
     }
 
-Next, we just add the ``ImageParticle`` elements to visualize particles for each group defined above.
+Next, we just add the ``ImageParticle`` types to visualize particles for each group defined above.
 
 .. code-block:: js
 
@@ -327,4 +327,4 @@ And now if you run the code, you should have a simple animation that displays pa
 what's next?
 ------------
 
-In the next article, we introduce the ``ShaderEffect`` element used for more advanced graphic effects. Then you will implement a demo application that combines the use of `Particles` and `Shaders`.
+In the next article, we introduce the ``ShaderEffect`` type used for more advanced graphic effects. We will also implement a demo application that uses `Particles` and `Shaders`.

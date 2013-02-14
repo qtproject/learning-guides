@@ -17,7 +17,7 @@ Why Would You Want to Read this Guide?
 
 The goal of this tutorial is to introduce you to some of the features of Qt Quick 2 for implementing animations and graphic effects. Mainly, this tutorial provides an overview of how to use the `Particles` module in Qt Quick 2 as well as `ShaderEffects` for advanced graphic effects.
 
-The tutorial is split into three main chapters. In the first chapter, you will be introduced to the `Particles` module. We will provide some basic setup code illustrating the use of the main elements. The second chapter provides a quick overview of how to use `Shader` programs within QML through a simple example. The last chapter will focus on implementing a demo application step by step using `Animations`, `Particles` and `Shaders`.
+The tutorial is split into three main chapters. In the first chapter, you will be introduced to the `Particles` module. We will provide some basic setup code illustrating the use of the main types. The second chapter provides a quick overview of how to use `Shader` programs within QML through a simple example. The last chapter will focus on implementing a demo application step-by-step using `Animations`, `Particles`, and `Shaders`.
 
 
 .. image:: images/screenshot.png
@@ -37,6 +37,7 @@ The guide is available in the following formats:
      :download:`PDF <qteffects/ParticlesTutorial.pdf>`
 
      :download:`ePub <qteffects/ParticlesTutorial.epub>` for ebook readers. Further details can be found `here <http://en.wikipedia.org/wiki/EPUB#Software_reading_systems>`_.
+
      :download:`Qt Help <qteffects/ParticlesTutorial.qch>` for Qt Assistant and Qt Creator. In Qt Assistant, in the :qt:`Preferences Dialog <assistant-details.html#preferences-dialog>` under the `Documentation` tab (in a collapsible menu for Mac users), you click on the `Add` button in order to add this guide in .qch format. We do the same in Qt Creator under the `Options` dialog in the `Help` section. Here you can add this guide in the `Documentation` tab.
 
 
@@ -54,4 +55,4 @@ Qt and the Qt logo is a registered trade mark of Digia plc and/or its subsidiari
 
 .. rubric:: What's Next?
 
-Next will be an overview of the `Particles` module in Qt Quick 2 with simple examples that will cover the most basic elements.
+Next chapter provides an overview of the `Particles` module in Qt Quick 2 with simple examples that will cover the most basic types.

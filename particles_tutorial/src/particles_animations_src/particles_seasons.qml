@@ -257,7 +257,7 @@ Rectangle {
             top: parent.top
         }
 
-        speed : AngleDirection {angle: 90; angleVariation : 20; magnitude: 100}
+        velocity : AngleDirection {angle: 90; angleVariation : 20; magnitude: 100}
         size: 20
         sizeVariation: 10
     }
@@ -270,7 +270,7 @@ Rectangle {
         enabled: false
         anchors.fill: parent
         emitRatePerParticle: 80
-        speed: PointDirection {yVariation: 16; xVariation: 5}
+        velocity: PointDirection {yVariation: 16; xVariation: 5}
         acceleration: PointDirection {y: -16}
     }
 
@@ -286,7 +286,7 @@ Rectangle {
             group: "F"
             emitRatePerParticle: 80
             lifeSpan: 2000
-            speed: AngleDirection {magnitude: 64; angleVariation: 360}
+            velocity: AngleDirection {magnitude: 64; angleVariation: 360}
         }
 
     }
@@ -299,7 +299,7 @@ Rectangle {
         lifeSpan: 3000
         anchors.bottom: parent.bottom
         width: parent.width
-        speed : PointDirection {y: -120 ; xVariation: 16}
+        velocity : PointDirection {y: -120 ; xVariation: 16}
         size: 20
         GroupGoal {
             groups: ["D"]
@@ -321,7 +321,7 @@ Rectangle {
         group: "G"
         y: parent.height / 5
         emitRate: 800
-        acceleration : AngleDirection { angleVariation : 360 ; magnitude: 20}
+        velocity : AngleDirection { angleVariation : 360 ; magnitude: 20}
         size: 100
         sizeVariation: 20
 
@@ -349,7 +349,7 @@ Rectangle {
             right: parent.right
             top: parent.top
         }
-        speed : AngleDirection {angle: 90; angleVariation : 20; magnitude: 80}
+        velocity : AngleDirection {angle: 90; angleVariation : 20; magnitude: 80}
         size: 30
         sizeVariation: 20
     }
@@ -371,7 +371,7 @@ Rectangle {
         group: "C"
         anchors.bottom: parent.bottom
         anchors.left: parent.left
-        speed : AngleDirection { angle : 300; angleVariation: 30; magnitude: 100}
+        velocity : AngleDirection { angle : 300; angleVariation: 30; magnitude: 100}
         size: 50
         sizeVariation: 20
     }
@@ -384,7 +384,7 @@ Rectangle {
         group: "B"
         anchors.bottom: parent.bottom
         anchors.right: parent.right
-        speed : AngleDirection { angle : 250; angleVariation: 40; magnitude: 100}
+        velocity : AngleDirection { angle : 250; angleVariation: 40; magnitude: 100}
         size: 50
         sizeVariation: 10
     }

@@ -85,7 +85,7 @@ Rectangle {
             bottom: parent.bottom
         }
 
-        speed:  AngleDirection {
+        velocity:  AngleDirection {
             angle: 270
             angleVariation: 10
             magnitude: 200
@@ -97,7 +97,7 @@ Rectangle {
             system: particlesSystem
             y: - root.height / 2
             width: parent.width
-            height: 10
+            height: 75
             jump: true
         }
     }
@@ -108,7 +108,7 @@ Rectangle {
         follow: "A"
         size: 12
         emitRatePerParticle: 80
-        speed: PointDirection {yVariation: 10; xVariation: 10}
+        velocity: PointDirection {yVariation: 10; xVariation: 10}
         acceleration: PointDirection {y:  10}
     }
 
@@ -124,7 +124,7 @@ Rectangle {
             lifeSpan: 1000
             emitRatePerParticle: 350
             size: 10
-            speed: AngleDirection {angleVariation: 360; magnitude: 100}
+            velocity: AngleDirection {angleVariation: 360; magnitude: 100}
             acceleration: PointDirection {y:  20}
         }
     }
