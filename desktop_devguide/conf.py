@@ -46,7 +46,7 @@ htmlhelp_basename = 'QtQuickApplicationGuide4Desktop'
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'QtQuickApplicationGuide4Desktop.tex', u'Qt Quick Application Developer Guide for Desktop',
-   u'Nokia, http://qt.nokia.com/learning', 'manual'),
+   u'Digia, http://qt.digia.com/Product/Learning/', 'manual'),
 ]
 
 

@@ -38,9 +38,9 @@
 
 // Tool.qml
 
-import QtQuick 1.1
+import QtQuick 2.0
 
-// use Image as the top level element
+// use Image as the top level type
 Image {
     id: root
     signal clicked()

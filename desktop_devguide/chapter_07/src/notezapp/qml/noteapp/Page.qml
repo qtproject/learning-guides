@@ -36,7 +36,7 @@
 **
 ****************************************************************************/
 
-import QtQuick 1.1
+import QtQuick 2.0
 
 import "noteDB.js" as NoteDB
 
@@ -64,7 +64,7 @@ Item {
         Note { }
     }
 
-    // creting an Item element that will be used as a note container
+    // creting an Item type that will be used as a note container
     // we anchor the container to fill the parent as it will be used
     // later in the code to control the dragging area for notes
     Item { id: container; anchors.fill: parent }
@@ -99,7 +99,7 @@ Item {
     }
 
     // a Javascript helper function for iterating through
-    // the children elements of the container item
+    // the children types of the container item
     // and calls destroy() for deleting them
     function clear() {
         for (var i=0; i<container.children.length; ++i) {

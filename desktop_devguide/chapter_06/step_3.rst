@@ -13,8 +13,7 @@ Loading a Custom Font
 
 It is a very common approach in modern applications to use and deploy custom fonts and not depend on the system fonts. For `NoteApp`, we would like to do the same and we will use what QML offers for this.
 
-The :qt:`FontLoader <qml-fontloader.html>` QML element enables you to load fonts by name or URL path. As the loaded font could be widely used in the entire application, loading the font in the `main.qml` file and using it in the rest of the components would
-be the recommended approach.
+The :qt5:`FontLoader <qtquick/qml-qtquick2-fontloader.html>` QML type enables you to load fonts by name or URL path. As the loaded font could be widely used in the entire application, we recommend loading the font in the `main.qml` file and use it in the rest of the components.
 
 .. code-block:: js
 
@@ -37,7 +36,7 @@ be the recommended approach.
         ...
     }
 
-So we have created a `webfont` property for the `window` item. This property can be safely used in the rest of the components and we would like to use it in the `Note` for setting the font of the `editArea` to the newly loaded font.
+So we have created a `webfont` property for the `window` item. This property can be safely used in the rest of the components, so let us use it for the `editArea` in the `Note` component.
 
 .. code-block:: js
 
@@ -51,8 +50,8 @@ So we have created a `webfont` property for the `window` item. This property can
         ...
     }
 
-To set the font for `editArea`, we use the :qt:`font.family <qml-text.html#font.family-prop>` property. From the `window` root element, we use its `webfont` property to get the font name to be set.
+To set the font for `editArea`, we use the :qt5:`font.family <qtquick/qml-qtquick2-text.html#font.family-prop>` property. From the `window`, we use its `webfont` property to get the font name to be set.
 
 .. rubric:: What's Next?
 
-The next step will take you step by step through the details of making     NoteApp* ready for deployment.
+The next step will take you through the details of making NoteApp* ready for deployment.

@@ -38,7 +38,7 @@
 
 // PagePane.qml
 
-import QtQuick 1.1
+import QtQuick 2.0
 
 Item {
     id: root
@@ -76,7 +76,7 @@ Item {
         }
     ]
 
-    // using a BorderImage element to set
+    // using a BorderImage type to set
     // a background for the PagePanel
     BorderImage {
         id: background

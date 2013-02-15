@@ -38,7 +38,7 @@
 
 // Page.qml
 
-import QtQuick 1.1
+import QtQuick 2.0
 import "noteDB.js" as NoteDB
 
 Item {
@@ -63,7 +63,7 @@ Item {
         Note { }
     }
 
-    // creating an Item element that will be
+    // creating an Item type that will be
     // used as a note container we anchor the container
     // to fill the parent as it will be used
     // later in the code to control the dragging
@@ -103,7 +103,7 @@ Item {
     }
 
     // a Javascript helper function for
-    // iterating through the children elements of the
+    // iterating through the children types of the
     // container item and calls destroy() for deleting them
     function clear() {
         for (var i=0; i<container.children.length; ++i) {

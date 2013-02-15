@@ -36,7 +36,7 @@
 **
 ****************************************************************************/
 
-import QtQuick 1.1
+import QtQuick 2.0
 
 // Note.qml
 Item {
@@ -105,7 +105,7 @@ Item {
         onPaintedHeightChanged: updateNoteHeight()
     }
 
-    // defining a behavior when the height property changes for root element
+    // defining a behavior when the height property changes for root type
     Behavior on height { NumberAnimation {} }
 
     // javascript helper function that calculates the height of the note

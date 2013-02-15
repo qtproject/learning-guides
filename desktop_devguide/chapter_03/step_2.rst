@@ -8,23 +8,23 @@
     http://creativecommons.org/licenses/by-sa/2.5/legalcode .
     ---------------------------------------------------------------------------
 
-Bind Marker Item with the Page Item in Repeater
-===============================================
+Binding Marker Item with the Page Item
+======================================
 
-Previously we saw the implementation of the `PagePanel` component, which uses three states to toggle the :qt:`opacity <qml-item.html#opacity-prop>` property of the `Page` items. In this step, we will see how to use the `Marker` and the `MarkerPanel` components to enable page navigation.
+Earlier we saw the implementation of the `PagePanel` component, which uses three states to toggle the :qt5:`opacity <qtquick/qml-qtquick2-item.html#opacity-prop>` property of the `Page` component. In this step, we will see how to use the `Marker` and the `MarkerPanel` components to enable page navigation.
 
-During the prototype phase, we saw that the `MarkerPanel` component is quite basic and doesn't have any functionality. It uses a :qt:`Repeater Element <qml-repeater.html>` that generates three QML Items and the `Marker` component is used as the delegate.
+During the prototype phase, we saw that the `MarkerPanel` component is quite basic and doesn't have any functionality. It uses a :qt5:`Repeater type <qtquick/qml-qtquick2-repeater.html>` that generates three QML Items and the `Marker` component is used as the delegate.
 
-`MarkerPanel` should store the current active marker, which is the marker clicked by the user. Based on the active marker of `MarkerPanel`, `PagePanel` will update its state property. We need to bind the     PagePanel* **state** property with the a new property of `MarkerPanel` that holds the current active marker.
+`MarkerPanel` should store the current active marker, which is the marker clicked by the user. Based on the active marker of `MarkerPanel`, `PagePanel` will update its state property. We need to bind the  PagePanel* **state** property with the a new property of `MarkerPanel` that holds the current active marker.
 
-Let's define a `string` property in `MarkerPanel` and call it     *activeMarker**.
+Let's define a `string` property in `MarkerPanel` and call it *activeMarker**.
 
 
 .. code-block:: js
 
     // MarkerPanel.qml
 
-    import QtQuick 1.1
+    import QtQuick 2.0
 
     Item {
         id: root
@@ -43,13 +43,13 @@ We could have a     *markerid** value stored, which we can use to uniquely ident
     :align: center
 
 
-We have a `Repeater` element that generates three     marker* items based on a model, so we can use a model to store our `markerid` values and use it in the `Repeater`.
+We have a `Repeater` element that generates three marker* items based on a model, so we can use a model to store our `markerid` values and use it in the `Repeater`.
 
 .. code-block:: js
 
     // MarkerPanel.qml
 
-    import QtQuick 1.1
+    import QtQuick 2.0
 
     Item {
         id: root
@@ -147,9 +147,9 @@ In the `main.qml` file, where we already have a `Page` item and a `MarkerPanel` 
         }
     }
 
-In the code shown above, we see how the :qt:`property binding <propertybinding.html>` feature of QML helps by setting, or rather binding, the     *state** property with the **activeMarker**. This means that whatever value **activeMarker** will have during user's selection, then this value will be also assigned to the **state** property of the *PagePanel*, thus toggling the visibility of the respective page.
+In the code shown above, we see how the :qt5:`property binding <qtqml/qtqml-syntax-propertybinding.html>` feature of QML helps in binding the *state** property with the **activeMarker** property. This means that whatever value **activeMarker** will have during user's selection, the same value is also assigned to the **state** property of the *PagePanel*, thus toggling the visibility of the respective page.
 
 
 .. rubric:: What's Next?
 
-The next step will give us details on how to use graphics for our components and items in order to shape up our application's UI.
+The next step will give us details on how to use graphics for our components and items to enhance our application's UI.

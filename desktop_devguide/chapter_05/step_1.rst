@@ -8,25 +8,24 @@
     http://creativecommons.org/licenses/by-sa/2.5/legalcode .
     ---------------------------------------------------------------------------
 
-Using the Behavior Element to Animate NoteToolbar
-=================================================
+Animating the NoteToolbar
+=========================
 
-Let's see how we can improve the `Note` Component and add a behavior to the element based on user's interaction. The `Note` Component has a toolbar with a     Delete* tool for deleting the note. Moreover, the note-toolbar is used to drag the note around by keeping the mouse pressed on it and moving the mouse.
+Let's see how we can improve the `Note` Component and add a behavior based on user's interaction. The `Note` Component has a toolbar with a Delete* tool for deleting the note. Moreover, the toolbar is used to drag the note around by keeping the mouse pressed on it.
 
-An improvement could be to make the `Delete` tool of the `Note Toolbar` visible only when needed. For instance, what we could show the `Delete` tool only when the toolbar is
-hovered and it would be nice to do this in a transitional approach, meaning using fading in and out effects.
+An improvement could be to make the `Delete` tool visible only when needed. For instance, making the `Delete` tool visible only when the toolbar is hovered, and it would be nice to do this using fade-in and fade-out effects.
 
-QML provides several approaches to implement this by using `Animation` and `Transition` elements as we will see later on. For this specific case, however, we use the :qt:`Behavior <qml-behavior.html>` QML Element and later on cover the reason behind this.
+QML provides several approaches to implement this by using `Animation` and `Transition` types. In this specific case, we will use the :qt5:`Behavior <qtquick/qml-qtquick2-behavior.html>` QML type, and later on cover the reason behind this.
 
 
-Behavior and NumberAnimation QML Elements
------------------------------------------
+Behavior and NumberAnimation Types
+----------------------------------
 
-In the `NoteToolbar` component, we use the :qt:`Row <qml-row.html>` element to layout the     Delete* tool so changing the `opacity` property of the :qt:`Row <qml-row.html>` element will also effect the opacity of the *Delete* tool.
+In the `NoteToolbar` component, we use the :qt5:`Row <qtquick/qml-qtquick2-row.html>` type to layout the     Delete* tool, so changing the `opacity` property of the :qt5:`Row <qtquick/qml-qtquick2-row.html>` type will also effect the opacity of the *Delete* tool.
 
 .. note:: The value of the `opacity` property is propagated from the parent to the child items.
 
-The :qt:`Behavior <qml-behavior.html>` element helps you define the behavior of your element based on the property changes of that element as shown in the following code in `NoteToolbar.qml`:
+The :qt5:`Behavior <qtquick/qml-qtquick2-behavior.html>` type helps you define the behavior of the item based on the property changes of that item as shown in the following code:
 
 .. code-block:: js
 
@@ -57,8 +56,8 @@ The :qt:`Behavior <qml-behavior.html>` element helps you define the behavior of 
         }
         spacing: 20
 
-        // the opacity depends if the mousearea elements
-        // have the cursor of the mouse.
+        // the opacity depends if the mousearea
+        // has the cursor of the mouse.
         opacity: mousearea.containsMouse ? 1 : 0
 
         // using the behavior element to specify the
@@ -72,15 +71,15 @@ The :qt:`Behavior <qml-behavior.html>` element helps you define the behavior of 
     }
     ...
 
-As we can see from the code shown above, we enable the     *hoverEnabled** property in the :qt:`MouseArea <qml-mousearea.html>` element, which allows `MouseArea` to accept mouse hover events. Afterwards, we toggle the `opacity` of the `Row` element to `0` if the `mousearea` element is not hovered and to `1` otherwise. The :qt:`containsMouse <qml-mousearea.html#containsMouse-prop>` property of `MouseArea` is used for this, which is set to true only when `mousearea` is hovered.
+As you can see in the code above, we enable the *hoverEnabled** property of :qt5:`MouseArea <qtquick/qml-qtquick2-mousearea.html>` type to accept mouse hover events. Afterwards, we toggle the `opacity` of the `Row` type to `0` if the `Mousearea` type is not hovered and to `1` otherwise. The :qt5:`containsMouse <qtquick/qml-qtquick2-mousearea.html#containsMouse-prop>` property of `MouseArea` is used to decide the opacity value for the Row type.
 
-So the :qt:`Behavior <qml-behavior.html>` element is created inside the `Row` element to define a behavior for it when the opacity` property is toggled and therefore changed so a :qt:`NumberAnimation <qml-numberanimation.html>` element is created to animate this change.
+So the :qt5:`Behavior <qtquick/qml-qtquick2-behavior.html>` type is created inside the `Row` type to define its behavior based on its `opacity` property. When the opacity value changes, the :qt5:`NumberAnimation <qtquick/qml-qtquick2-numberanimation.html>` is applied.
 
-The :qt:`NumberAnimation <qml-numberanimation.html>` element applies an animation based on numerical value changes so we use it for the `opacity` property of the `Row` for a duration of 350 milliseconds.
+The :qt5:`NumberAnimation <qtquick/qml-qtquick2-numberanimation.html>` type applies an animation based on numerical value changes, so we use it for the `opacity` property of the `Row` for a duration of 350 milliseconds.
 
-.. note:: The `NumberAnimation` element inherits from :qt:`PropertyAnimation <qml-propertyanimation.html>`, which have `Easing.Linear` as the default easing curve of the animation.
+.. note:: The `NumberAnimation` type is inherited from :qt5:`PropertyAnimation <qtquick/qml-qtquick2-propertyanimation.html>`, which has `Easing.Linear` as the default easing curve animation.
 
 
 .. rubric:: What's Next?
 
-In the next step, we will see how to implement an animation using     Transition* and other QML animation elements.
+In the next step, we will see how to implement an animation using Transition* and other QML animation types.

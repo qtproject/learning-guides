@@ -35,8 +35,7 @@
 ** $QT_END_LICENSE$
 **
 ****************************************************************************/
-
-import QtQuick 1.1
+import QtQuick 2.0
 import "noteDB.js" as NoteDB
 
 // Page.qml
@@ -64,7 +63,7 @@ Item {
         Note { }
     }
 
-    // creting an Item element that will be
+    // creting an Item type that will be
     // used as a note container
     Item { id: container }
 
@@ -73,7 +72,7 @@ Item {
     // to load notes from the database
     Component.onCompleted: loadNotes()
 
-    // a helper Javascript function that is reads
+    // a helper JavaScript function that is reads
     // the note data from DB
     function loadNotes() {
         var noteItems = NoteDB.readNotesFromPage(markerId)
@@ -82,7 +81,7 @@ Item {
         }
     }
 
-    // a Javascript helper function for creating Note QML objects
+    // a JavaScript helper function for creating Note QML objects
     function newNoteObject(args) {
         //calling the createObject() function on previously
         //declared Note Component the container will be the
@@ -93,8 +92,8 @@ Item {
         }
     }
 
-    // a Javascript helper function for iterating through
-    // the children elements of the
+    // a JavaScript helper function for iterating through
+    // the children types of the
     // container item and calls destroy() for deleting them
     function clear() {
         for (var i=0; i<container.children.length; ++i) {
@@ -102,7 +101,7 @@ Item {
         }
     }
 
-    // this Javascript helper function is used to create,
+    // this JavaScript helper function is used to create,
     // not loaded from db, Note items
     // so that it will set the markerId property of the note.
     function newNote() {

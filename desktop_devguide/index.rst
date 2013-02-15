@@ -13,7 +13,7 @@ Qt Quick Application Developer Guide for Desktop
 
 Let's learn by example!
 
-The goal of this guide is to make you familiar with best programming practices using Qt Quick for building applications with QML. A prerequisite to this guide is to have a solid understanding of the QML language and also use the Qt Quick Application Development Primer as your first guide on how to use Qt Quick for application development. Throughout this guide, we’ll walk you through various aspects and best practices of application development with QML and how to deploy the application to a typical Desktop environment. References to other information sources are provided to make it easy for you to deepen your understanding of QML programming.
+The goal of this guide is to make you familiar with best programming practices using Qt Quick for building applications with QML. A prerequisite to this guide is to have a solid understanding of the QML language, so do read :qt5:about it<qtquick/qtquick-applicationdevelopers.html> to find out what it offers. Throughout this guide, we’ll walk you through various aspects and best practices of application development with QML and how to deploy the application to a typical Desktop environment. References to other information sources are provided to make it easy for you to deepen your understanding of QML programming.
 
 .. toctree::
    :maxdepth: 2

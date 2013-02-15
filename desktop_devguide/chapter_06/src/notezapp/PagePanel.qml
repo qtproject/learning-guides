@@ -38,7 +38,7 @@
 
 // PagePanel.qml
 
-import QtQuick 1.1
+import QtQuick 2.0
 import "noteDB.js" as NoteDB
 
 Item {

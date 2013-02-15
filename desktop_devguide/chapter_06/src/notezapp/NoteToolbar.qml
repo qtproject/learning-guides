@@ -38,7 +38,7 @@
 
 // NoteToolbar.qml
 
-import QtQuick 1.1
+import QtQuick 2.0
 
 Item {
     id: root
@@ -57,12 +57,12 @@ Item {
     }
 
     // declaring a property alias to the
-    // drag property of MouseArea element
+    // drag property of MouseArea type
     property alias drag: mousearea.drag
 
     // this default property enables us to
     // create QML Items that will be automatically
-    // laid out in the Row element and considered as toolItems
+    // laid out in the Row type and considered as toolItems
     default property alias toolItems: layout.children
 
     MouseArea {
@@ -78,7 +78,7 @@ Item {
         onPressed: root.pressed()
     }
 
-    // using a Row element for laying out tool
+    // using a Row type for laying out tool
     // items to be added when using the NoteToolbar
     Row {
         id: layout
@@ -93,12 +93,12 @@ Item {
 
         spacing: 20
 
-        // the opacity depends if the mousearea elements
+        // the opacity depends if the mousearea types
         // has the cursor of the mouse.
         opacity: mousearea.containsMouse ? 1 : 0
 
-        // using the behavior element to specify the
-        // behavior of the layout element
+        // using the behavior type to specify the
+        // behavior of the layout type
         // when on the opacity changes.
         Behavior on opacity {
             // using NumberAnimation to animate

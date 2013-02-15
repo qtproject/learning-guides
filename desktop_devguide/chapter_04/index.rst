@@ -8,14 +8,14 @@
     http://creativecommons.org/licenses/by-sa/2.5/legalcode .
     ---------------------------------------------------------------------------
 
-Managing Note Objects Dynamically and Store Notes Locally
-=========================================================
+Managing Note Objects Dynamically
+=================================
 
-We have seen so far that QML is quite a powerful declarative language, but combining it with with Javascript makes it even more powerful. QML not only enables us to have :qt:`inline Javascript <qdeclarativejavascript.html#inline-javascript>` functions, but also to import entire Javascript libraries or files as we will see in the detailed steps of this chapter.
+We have so far seen that QML is quite a powerful declarative language, but combining it with with JavaScript makes it even more powerful. QML not only enables us to have :qt5:`inline JavaScript <qtqml/qtqml-javascript-expressions.html#custom-methods>` functions, but also to import entire JavaScript libraries or files.
 
-Part of the core functionality of     NoteApp* is to enable users to create, edit and delete notes as they like, but the application should also be able to store notes automatically without prompting them.
+Part of the core functionality of NoteApp* is to enable users to create, edit, and delete notes as they like, but the application should also be able to store notes automatically without prompting them.
 
-This chapter will guide you in detailed steps how to use Javascript to add logic to QML code and how local storage can be implemented with :qt:`Qt Quick Database API <qdeclarativeglobalobject.html>`.
+This chapter will guide you about using JavaScript to add logic to QML code, and implementing local storage using :qt5:`Qt Quick Local Storage <qtquick/qmlmodule-qtquick-localstorage2-qtquick-localstorage-2.html>`.
 
 .. note::
 
@@ -24,8 +24,9 @@ This chapter will guide you in detailed steps how to use Javascript to add logic
 
 The main topics covered in this chapter are:
 
-     Using Javascript for implementing the functionality of Dynamic Object Management
-     How to store data locally using the Qt Quick Database API
+    * Using JavaScript for implementing the functionality of Dynamic Object Management
+
+    * How to store data locally using the Qt Quick Database API
 
 This chapter has the following steps:
 

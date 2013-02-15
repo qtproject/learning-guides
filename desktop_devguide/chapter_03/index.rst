@@ -11,11 +11,11 @@
 Implementing the UI and Adding Functionality
 ============================================
 
-The initial prototype has introduced the basis of our UI and concepts of     NoteApp* functionality, and helped us identify which QML Component needed to be created.
+The initial prototype has introduced the basis of our UI and concepts of NoteApp* functionality, and helped us identify which QML Component is needed.
 
-Based on the prototype, we will try to build a working application reaching towards a more complete UI with some working functionality. Now we will start to compose the application's UI using the components we have implemented so far.
+Based on the prototype, we will try to build a working application reaching towards a more complete UI with some working functionality. Now, we will start composing the application's UI using the components we have implemented so far.
 
-This chapter will cover detailed steps about using graphics with QML, images and backgrounds, enhancing the UI and also about adding functionality using Javascript. You will have the chance to dive deeper into some QML elements and also get introduced to new ones while slightly increasing the level of code complexity as we continue to implement functionality.
+This chapter will cover detailed steps about using graphics with QML, images and backgrounds, enhancing the UI, and also about adding functionality using Javascript. You will have a chance to dive deeper into some QML types and also get introduced to new ones while slightly increasing the level of code complexity as we continue to implement functionality.
 
 .. note::
 
@@ -24,10 +24,13 @@ This chapter will cover detailed steps about using graphics with QML, images and
 
 These are the main points covered in this chapter:
 
-     Managing `Page` elements by introducing the *PagePanel* component and by using the `Repeater` element
-     Using graphics with QML
-     Inline Javascript code for enhancing the UI and adding functionality
-     Diving deeper into the QML elements that we are currently using
+    * Managing `Page` elements by introducing the *PagePanel* component and by using the `Repeater` element
+
+    * Using graphics with QML
+
+    * Inline Javascript code for enhancing the UI and adding functionality
+
+    * Diving deeper into the QML types that we are currently using
 
 This chapter has the following steps:
 

@@ -38,13 +38,13 @@
 
 // making the nodeDB.js a stateless library
 .pragma library
-
+.import QtQuick.LocalStorage 2.0 as Sql
 // declaring a global variable for storing the database instance
 var _db
 
 function openDB() {
     print("noteDB.createDB()")
-    _db = openDatabaseSync("StickyNotesDB","1.0","The stickynotes Database",1000000);
+    _db = Sql.LocalStorage.openDatabaseSync("StickyNotesDB","1.0","The stickynotes Database",1000000);
     createNoteTable();
 }
 

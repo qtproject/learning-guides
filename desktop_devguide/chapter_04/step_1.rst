@@ -8,12 +8,12 @@
     http://creativecommons.org/licenses/by-sa/2.5/legalcode .
     ---------------------------------------------------------------------------
 
-Create and Manage Note Item Objects Dynamically
-===============================================
+Create and Manage Note Items
+============================
 
-The user should be able to create and delete notes on the fly and this means that our code should be able to dynamically create and delete     Note* items. There are several ways to create and manage QML objects. In fact, we have seen one already using the :qt:`Repeater <qml-repeater.html>` element. Creating a QML object means that the component has to be created and loaded before creating instances of that component.
+The user should be able to create and delete notes on the fly and this means that our code should be able to dynamically create and delete Note* items. There are several ways to create and manage QML objects. In fact, we have seen one already using the :qt5:`Repeater <qtquick/qml-qtquick2-repeater.html>` type. Creating a QML object means that the component has to be created and loaded before creating instances of that component.
 
-QML objects can be created by calling the :qt:`createObject(Item parent, object properties ) <qml-component.html#createObject-method>` Javascript function on the component, which will create the object for us. Please refer to :qt:`Dynamic Object Management in QML <qdeclarativedynamicobjects.html>` for further details.
+QML objects can be created by calling the :qt5:`createObject(Item parent, object properties) <qtqml/qml-qtquick2-component.html#createObject-method>` JavaScript function on the component. Refer to :qt5:`Dynamic Object Management in QML <qtqml/qtqml-javascript-dynamicobjectcreation.html>` for further details.
 
 Let's see how we can create note item objects in our components.
 
@@ -21,7 +21,7 @@ Let's see how we can create note item objects in our components.
 Note Object Creation Dynamically
 --------------------------------
 
-We know that a `Note` item belongs to a `Page` item so the `Page` component is responsible for note object creation as well as for loading notes from the database as we will see in the next step.
+We know that a `Note` item belongs to the `Page` component, which is responsible for the note object creation as well as to loading notes from the database.
 
 As mentioned before, we first load the `Note` component in the `Page` component:
 
@@ -37,7 +37,7 @@ As mentioned before, we first load the `Note` component in the `Page` component:
     }
      ...
 
-Now let's define a Javascript function that will help us create QML `Note` objects. We need to take into consideration that, when creating a QML object, a set of arguments is passed and one of them is the parent of the this object. Considering to have a `Note` item container within the `Page` component would be a good idea for managing our note objects - especially for later on as we would like to save these notes in a database.
+Now let's define a Javascript function that will creates QML `Note` objects. While creating a QML object, we must ensure that one of the arguments is the parent of the `this` object. Considering to have a `Note` item container within the `Page` component would be a good idea for managing our note objects, as we would like to save these notes in a database.
 
 .. code-block:: js
 
@@ -60,9 +60,9 @@ Now let's define a Javascript function that will help us create QML `Note` objec
     }
     ...
 
-So in the code shown above, we see how a new     note* item object can be created in the *newNoteObject()* function. The newly created note objects will belong to the *container* item.
+So in the code shown above, we see how a new note* item object can be created in the *newNoteObject()* function. The newly created note objects will belong to the *container* item.
 
-Now we would like to call this function when the     new note* tool is pressed on the toolbar which is created in the `main.qml` file. Since the `PagePanel` component is aware of the current visible *page* item, we can create a new property in `PagePanel` that stores that page.
+Now we would like to call this function when the new note* tool is pressed on the toolbar, which is created in the `main.qml` file. As the `PagePanel` component is aware of the current visible *page* item, we can create a new property in `PagePanel` to store that page.
 
 We will access this property in the `main.qml` file and call the function to create new note items.
 
@@ -121,7 +121,7 @@ We will access this property in the `main.qml` file and call the function to cre
 
 We modify our three states for setting the appropriate value for the `currentPage` property.
 
-In the `main.qml` file, let's see how to call the function for creating new note objects when the     new note* tool is clicked:
+In the `main.qml` file, let's see how to call the function for creating new note objects when the new note* tool is clicked:
 
 .. code-block:: js
 
@@ -153,16 +153,16 @@ In the `main.qml` file, let's see how to call the function for creating new note
 Deleting Note Objects
 ---------------------
 
-Deleting the `Note` objects is a more straightforward process because the QML :qt:`Item <qml-item.html>` element provides a Javascript function called :qt:`destroy() <qdeclarativedynamicobjects.html#deleting-objects-dynamically>`. As we already have a container item whose children are all `Note` items, we can simply iterate through the list of children and call :qt:`destroy() <qdeclarativedynamicobjects.html#deleting-objects-dynamically>`  on each of them.
+Deleting the `Note` objects is a more straightforward process because the QML :qt5:`Item <qtquick/qml-qtquick2-item.html>` type provides a JavaScript function called :qt5:`destroy() <qtqml/qtqml-javascript-dynamicobjectcreation.html#deleting-objects-dynamically>`. As we already have a container item whose childrens are `Note` items, we can simply iterate through the list of children and call :qt5:`destroy() <qtqml/qtqml-javascript-dynamicobjectcreation.html#deleting-objects-dynamically>` on each of them.
 
-In the `Page` component, let's define a function that will perform this operation for us:
+In the `Page` component, let's define a function to perform this operation for us:
 
 .. code-block:: js
 
     // Page.qml
     ...
 
-    // a Javascript helper function for iterating through the children elements of the
+    // a JavaScript helper function for iterating through the children elements of the
     // container item and calls destroy() for deleting them
     function clear() {
         for(var i=0; i<container.children.length; ++i) {
@@ -186,7 +186,7 @@ In the `main.qml` file, we call the `clear()` function when the `clear` tool is 
     }
     ...
 
-In order to allow the user to delete each note individually, we add a tool in the `NoteToolbar` component to our `Note` component and we can use the `Tool` component that was implemented earlier for this:
+In order to allow the user to delete each note individually, we add a tool in the `NoteToolbar` component to our `Note` component. We can use the `Tool` component that was implemented earlier for this:
 
 .. code-block:: js
 
@@ -213,4 +213,4 @@ In order to allow the user to delete each note individually, we add a tool in th
 
 .. rubric:: What's Next?
 
-Next there will a detailed step on how store the note items in a database locally.
+Next, there will be a detailed step on how store the note items in a database locally.

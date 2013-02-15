@@ -11,32 +11,32 @@
 Finalize the Prototype
 ======================
 
-We now have our QML components in place and they're ready to be used to actually build our prototype. Here is a list of the implemented components:
+We now have our QML components in place and they're ready to be used to build our prototype. Here is a list of the implemented components:
 
-     `Note`
-     `NoteToolbar`
-     `Marker`
-     `MarkerPanel`
-     `Page`
+    * `Note`
+    * `NoteToolbar`
+    * `Marker`
+    * `MarkerPanel`
+    * `Page`
 
 It is very likely that more QML components might come up as we go along in later phases.
 
-As previously mentioned, Qt Creator generates a `main.qml` file which is considered the main file to load in order to run     NoteApp*. Therefore, we will start laying out our components inside the `main.qml` file in order to compose the prototype.
+As previously mentioned, Qt Creator generates a `main.qml` file which is considered the main file to load in order to run NoteApp*. Therefore, we will start laying out our components inside the `main.qml` file to compose the prototype.
 
 
 Composing the Prototype
 -----------------------
 
-Going back to the UI concepts and looking at the design provided, we start laying out the QML items, so we have the panel of `Maker` items, the `MarkerPanel` component that is, laid out on the right and the `Page` component in the center. We haven't yet covered the toolbar UI element so let's do that now.
+Going back to the UI concepts and looking at the design provided, we start laying out the QML components. We have the panel of `Maker`, that is the `MarkerPanel` component placed on the right, and the `Page` component in the center. We haven't yet covered the toolbar so let's do that now.
 
-The toolbar contains two tools: one for creating new note items and one for clearing up the page. For simplicity, we will not create a component for this, but rather declare the items inside the `main.qml` file.
+The toolbar contains two tools: one for creating new note and one for clearing the page. For simplicity, we will not create a component for this, but rather define it inside the `main.qml` file.
 
 The code could look something like this:
 
 .. code-block:: js
 
     // using a Rectangle element to represent our toolbar
-    // it helps to align the column better with the rest of the items
+    // it helps to align the column better with the rest of the components
     Rectangle {
         id: toolbar
 
@@ -50,7 +50,7 @@ The code could look something like this:
             topMargin: 100; bottomMargin: 100
         }
 
-        // using a Column element to layout the tools of the toolbar
+        // using a Column type to place the tools
         Column {
             anchors { anchors.fill: parent; topMargin: 30  }
             spacing: 20
@@ -73,37 +73,37 @@ Now, we are ready to actually finalize our prototype. Here is how the `main.qml`
    :lines: 35-
 
 
-The following screen shows how the prototype looks when either running it using Qt Creator or     *qmlviewer**:
+The following screen shows how the prototype looks when either running it using Qt Creator or *qmlscene**:
 
 .. image:: img/prototype.png
    :scale: 65%
    :align: center
 
 
-Making Note Items Draggable Using the MouseArea QML Element
------------------------------------------------------------
+Making Note Components Draggable
+--------------------------------
 
-So far we have managed to get a very basic prototype running that will be our basis for the NoteApp UI. An interesting UI functionality we can quickly add during the prototype phase is to enable the user to drag note items within the page. To achieve this, the :qt:`MouseArea QML Element <qml-mousearea.html>` has a grouped property called :qt:`drag <qml-mousearea.html#drag.target-prop>`. We will use the     *drag.target** property by setting it to the **id** of our note item.
+So far we have managed to get a very basic prototype that will be our basis for the NoteApp UI. An interesting UI functionality we can quickly add during the prototype phase is to enable the user to drag note items within the page. To achieve this, the :qt5:`MouseArea QML Type <qtquick/qml-qtquick2-mousearea.html>` has a grouped property called :qt5:`drag <qtquick/qml-qtquick2-mousearea.html#drag.target-prop>`. We will use the *drag.target** property by setting it to the **id** of our note component.
 
-Considering that the user should use the `NoteToolbar` item for dragging the note item, the     MouseArea* Element should be inside the `NoteToolbar` component. The `NoteToolbar` component will handle the dragging operation from the user so we should set the :qt:`drag.target <qml-mousearea.html#drag.target-prop>` to the `Note` item.
+Considering that the user should use the `NoteToolbar` to drag a note, the MouseArea* type should be inside the `NoteToolbar` component. The `NoteToolbar` component handles the dragging operation by the user, so we should set the :qt5:`drag.target <qtquick/qml-qtquick2-mousearea.html#drag.target-prop>` to the `Note` component.
 
-To achieve this, we need to allow the `NoteToolbar` item used inside the `Note` component to bind the :qt:`drag.target <qml-mousearea.html#drag.target-prop>` property of `MouseArea` with the  the `Note` component's     *id**. QML provides :qt:`Property Aliases <propertybinding.html#property-aliases>` to enable this.
+To achieve this, we need to allow `NoteToolbar` used inside the `Note` component to bind the :qt5:`drag.target <qtquick/qml-qtquick2-mousearea.html#drag.target-prop>` property of `MouseArea` with the `Note` component's *id**. QML provides :qt5:`Property Aliases <qtqml/qtqml-syntax-objectattributes.html#property-aliases>` to enable this.
 
-Let's take the `NoteToolbar` component we have created so far and create a property alias for the     *drag** grouped property of `MouseArea`:
+Let's take the `NoteToolbar` component and create a property alias for the *drag** grouped property of `MouseArea`:
 
 .. literalinclude:: src/notezapp/NoteToolbar.qml
    :language: js
    :lines: 35-
 
-In the code shown above, we see the     *drag** property alias for `NoteToolbar`, which is bound to the **drag** property of *MouseArea* and now we will see how to use that in our `Note` component.
+In the code shown above, we see the *drag** property alias for `NoteToolbar`, which is bound to the **drag** property of *MouseArea*, and now we will see how to use that in our `Note` component.
 
 .. literalinclude:: src/notezapp/Note.qml
    :language: js
    :lines: 35-
 
-Detailed information on property bindings in QML can be found on the :qt:`Property Binding <propertybinding.html>` documentation page.
+Detailed information on property bindings in QML can be found on the :qt5:`Property Binding <qtqml/qtqml-syntax-propertybinding.html>` documentation page.
 
 
 .. rubric:: What's Next?
 
-Next we will start implementing the UI and basic functionality based on the prototype.
+Next, we will start implementing the UI and basic functionality based on the prototype.

@@ -36,7 +36,7 @@
 **
 ****************************************************************************/
 
-import QtQuick 1.1
+import QtQuick 2.0
 import "noteDB.js" as NoteDB
 
 // PagePane.qml
@@ -109,7 +109,7 @@ Item {
 
     Component.onDestruction: saveNotesToDB()
 
-    // a javascript function that saves all notes from the pages
+    // a JavaScript function that saves all notes from the pages
     function saveNotesToDB() {
         //clearing the DB table before populating with new data
         NoteDB.clearNoteTable();

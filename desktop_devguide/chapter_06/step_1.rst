@@ -8,21 +8,21 @@
     http://creativecommons.org/licenses/by-sa/2.5/legalcode .
     ---------------------------------------------------------------------------
 
-Using Javascript to Enhance the Note Item Functionality
-=======================================================
+Enhancing the Note Item Functionality
+=====================================
 
 A nifty functionality for the `Note` items would be to have the note grow as more text is entered. Let's say for simplicity reasons that the note will grow vertically as more text is entered while it wraps the text to fit the width.
 
-The :qt:`Text <qml-text.html>` element has a :qt:`paintedHeight <qml-text.html#paintedHeight-prop>` property that gives us the actual height of the text painted on the screen. Based on this value, we can increase or decrease the height of the note itself.
+The :qt5:`Text <qtquick/qml-qtquick2-text.html>` type has a :qt5:`paintedHeight <qtquick/qml-qtquick2-text.html#paintedHeight-prop>` property that gives us the actual height of the text painted on the screen. Based on this value, we can increase or decrease the height of the note itself.
 
-First let's define a Javascript helper function that would calculate the proper value for the :qt:`height <qml-item.html#height-prop>` property of the `Item` element as the top-level element for the `Note` component.
+First, let's define a JavaScript helper function that calculates the value for the :qt5:`height <qtquick/qml-qtquick2-item.html#height-prop>` property of the `Item` type, which is the top-level type for the `Note` component.
 
 .. code-block:: js
 
     // Note.qml
 
     ...
-    // javascript helper function that calculates the height of
+    // JavaScript helper function that calculates the height of
     // the note as more text is entered or removed.
     function updateNoteHeight() {
         // a note should have a minimum height
@@ -36,7 +36,7 @@ First let's define a Javascript helper function that would calculate the proper 
     }
     ...
 
-Since the `updateNoteHeight()` function updates the `height` property of the `root` element based on the :qt:`paintedHeight <qml-text.html#paintedHeight-prop>` property of `editArea`, we need to call this function upon a change on `paintedHeight`.
+As the `updateNoteHeight()` function updates the `height` property of the `root` based on the :qt5:`paintedHeight <qtquick/qml-qtquick2-text.html#paintedHeight-prop>` property of `editArea`, we need to call this function upon a change on `paintedHeight`.
 
 .. code-block:: js
 
@@ -56,7 +56,7 @@ Since the `updateNoteHeight()` function updates the `height` property of the `ro
 .. note:: Every property has a notifier signal that is emitted each time the property changes
 
 
-The `updateNoteHeight()` Javascript function changes the `height` property so we can define a behavior for this using the :qt:`Behavior <qml-behavior.html>` element.
+The `updateNoteHeight()` JavaScript function changes the `height` property so we can define a behavior for this using the :qt5:`Behavior <qtquick/qml-qtquick2-behavior.html>` type.
 
 .. code-block:: js
 
@@ -71,4 +71,4 @@ The `updateNoteHeight()` Javascript function changes the `height` property so we
 
 .. rubric:: What's Next?
 
-The next step will show how to use the `z` property of the `Item` element to properly order the notes.
+The next step will show how to use the `z` property of the `Item` type to properly order the notes.

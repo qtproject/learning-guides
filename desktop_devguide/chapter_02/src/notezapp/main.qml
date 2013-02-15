@@ -38,7 +38,7 @@
 
 // main.qml
 
-import QtQuick 1.1
+import QtQuick 2.0
 
 Rectangle {
     // using window as the identifier for this item as

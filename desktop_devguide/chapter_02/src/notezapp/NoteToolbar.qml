@@ -38,7 +38,7 @@
 
 // NoteToolbar.qml
 
-import QtQuick 1.1
+import QtQuick 2.0
 
 Rectangle {
     id: root
@@ -47,7 +47,7 @@ Rectangle {
     color: "#9e964a"
 
     // declaring a property alias to the drag
-    // property of MouseArea element
+    // property of MouseArea type
     property alias drag: mousearea.drag
 
     // creating a MouseArea item

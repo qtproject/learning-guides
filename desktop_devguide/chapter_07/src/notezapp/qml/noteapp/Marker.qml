@@ -36,10 +36,10 @@
 **
 ****************************************************************************/
 
-import QtQuick 1.1
+import QtQuick 2.0
 
 // Marker.qml
-// The Image element as top level is convenient as the Marker component
+// The Image type as top level is convenient as the Marker component
 // simply is a graphical UI with a clicked() signal.
 Image {
     id: root
@@ -89,7 +89,7 @@ Image {
         }
     ]
 
-    // creating a MouseArea element to intercept the mouse click
+    // creating a MouseArea type to intercept the mouse click
     MouseArea {
         id: mouseArea
         anchors.fill: parent

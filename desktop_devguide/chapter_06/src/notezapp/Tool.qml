@@ -38,9 +38,9 @@
 
 // Tool.qml
 
-import QtQuick 1.1
+import QtQuick 2.0
 
-// Use Image as the top level element
+// Use Image as the top level type
 Image {
     id: root
 

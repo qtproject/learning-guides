@@ -38,14 +38,14 @@
 
 // MarkerPanel.qml
 
-import QtQuick 1.1
+import QtQuick 2.0
 
 Rectangle {
     id: root
     width: 50
     height: 300
 
-    // column element that anchors to the entire parent
+    // column type that anchors to the entire parent
     Column {
         id: layout
         anchors.fill: parent

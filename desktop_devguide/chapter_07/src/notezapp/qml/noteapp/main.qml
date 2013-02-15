@@ -36,7 +36,7 @@
 **
 ****************************************************************************/
 
-import QtQuick 1.1
+import QtQuick 2.0
 import "noteDB.js" as NoteDB
 
 
@@ -95,7 +95,7 @@ Rectangle {
     }
 
     // the toolbar -
-    // using a Column element to layout the Tool items vertically
+    // using a Column type to layout the Tool items vertically
     Column {
         id: toolbar
         spacing: 16

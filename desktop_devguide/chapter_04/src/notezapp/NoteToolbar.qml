@@ -36,7 +36,7 @@
 **
 ****************************************************************************/
 
-import QtQuick 1.1
+import QtQuick 2.0
 
 // NoteToolbar.qml
 
@@ -53,12 +53,12 @@ Item {
     }
 
     // declaring a property alias to the
-    // drag property of MouseArea element
+    // drag property of MouseArea type
     property alias drag: mousearea.drag
 
     // this default property enables us to
     // create QML Items that will be automatically
-    // laid out in the Row element and considered as toolItems
+    // laid out in the Row type and considered as toolItems
     default property alias toolItems: layout.children
 
     MouseArea {
@@ -66,7 +66,7 @@ Item {
         anchors.fill: parent
     }
 
-    // using a Row element for laying out tool items
+    // using a Row type for laying out tool items
     // to be added when using the NoteToolbar
     Row {
         id: layout

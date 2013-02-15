@@ -38,7 +38,7 @@
 
 // main.qml
 
-import QtQuick 1.1
+import QtQuick 2.0
 import "noteDB.js" as NoteDB
 
 Rectangle {
@@ -94,7 +94,7 @@ Rectangle {
         border { color: "#600"; width: 4 }
     }
 
-    // using a Column element to layout the
+    // using a Column type to layout the
     // Tool items vertically
     Column {
         id: toolbar
