@@ -8,10 +8,10 @@
     http://creativecommons.org/licenses/by-sa/2.5/legalcode .
     ---------------------------------------------------------------------------
 
-How we proceed
+How we Proceed
 ===============
 
-In the following chapters, we will start with the development of our game. We will proceed step by step and take a deeper look on Qt3D Qt Qtuick API and related technologies. The source code archive accompanying this guide contains the final version of the application. Since this guide in on an advanced level, we will discuss relevant code samples directly taken from this version and omit making small applications for each topic.
+In the following chapters, we will start with the development of our game. We will proceed step-by-step and take a deeper look on Qt3D Qt Qtuick API and related technologies. The source code archive accompanying this guide contains the final version of the application. Since this guide in on an advanced level, we will discuss relevant code samples directly taken from this version and omit making small applications for each topic.
 
 First, we will cover basics of the Qt Quick Qt3D API. After this, we learn how to load models and textures. We will also cover dynamic model creation, making Head up Displays, states, a game menu, and the usage of GLSL shaders.
 

@@ -34,11 +34,11 @@ A .zip file that contains the full code source of the tutorial's examples is pro
 
 The guide is available in the following formats:
 
-     :download:`PDF <qteffects/ParticlesTutorial.pdf>`
+    * :download:`PDF <qteffects/ParticlesTutorial.pdf>`
 
-     :download:`ePub <qteffects/ParticlesTutorial.epub>` for ebook readers. Further details can be found `here <http://en.wikipedia.org/wiki/EPUB#Software_reading_systems>`_.
+    * :download:`ePub <qteffects/ParticlesTutorial.epub>` for ebook readers.
 
-     :download:`Qt Help <qteffects/ParticlesTutorial.qch>` for Qt Assistant and Qt Creator. In Qt Assistant, in the :qt:`Preferences Dialog <assistant-details.html#preferences-dialog>` under the `Documentation` tab (in a collapsible menu for Mac users), you click on the `Add` button in order to add this guide in .qch format. We do the same in Qt Creator under the `Options` dialog in the `Help` section. Here you can add this guide in the `Documentation` tab.
+    * :download:`Qt Help <qteffects/ParticlesTutorial.qch>` for Qt Assistant and Qt Creator.
 
 
 License

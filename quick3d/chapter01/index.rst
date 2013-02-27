@@ -48,10 +48,11 @@ A .zip file that contains the source code of each chapter is provided here:
 
 The guide is available in the following formats:
 
-     :download:`PDF <gamedevelopmentqt3d/GameDevelopmentQt3D.pdf>`
-     :download:`ePub <gamedevelopmentqt3d/GameDevelopmentQt3D.epub>` for ebook readers. Further details can be found `here <http://en.wikipedia.org/wiki/EPUB#Software_reading_systems>`_.
-     :download:`Qt Help <gamedevelopmentqt3d/GameDevelopmentQt3D.qch>` for Qt Assistant and Qt Creator. In Qt Assistant under the :qt:`Preferences Dialog <assistant-details.html#preferences-dialog>`, in the `Documentation` tab (in a collapsible menu for Mac users), you click on the Add button in order to add this guide in the .qch format. We do the same in Qt Creator, under the `Options` dialog, in the `Help` section you, can add this guide in the `Documentation` tab.
+    * :download:`PDF <gamedevelopmentqt3d/GameDevelopmentQt3D.pdf>`
 
+    * :download:`ePub <gamedevelopmentqt3d/GameDevelopmentQt3D.epub>` for ebook readers.
+
+    * :download:`Qt Help <gamedevelopmentqt3d/GameDevelopmentQt3D.qch>` for Qt Assistant and Qt Creator.
 
 License
 -------

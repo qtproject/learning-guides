@@ -46,8 +46,8 @@ extlinks = {
     'sdk': ('http://doc.qt.digia.com/sdk-1.1/%s', None),
     'simulator': ('http://doc.qt.digia.com/qtsimulator/%s', None),
     'qt': ('http://qt-project.org/doc/qt-4.8/%s', None),
-    'qt5': ('http://qt-project.org/doc/qt-5.0/qtdoc/%s', None),
-    'qt5-snapshot': ('http://doc-snapshot.qt-project.org/5.0/qtdoc/%s', None),
+    'qt5': ('http://qt-project.org/doc/qt-5.0/%s', None),
+    'qt5-snapshot': ('http://doc-snapshot.qt-project.org/%s', None),
     'guides-homepage': ('http://qt-project.org/wiki/Developer-Guides/%s', None),
     'download': ('http://releases.qt-project.org/learning/developerguides/%s', None),
     'qtquick-repo': ('http://qt-project.org/doc/qt-4.8/%s', None),
@@ -293,7 +293,7 @@ epub_basename = 'document_epub_basename'
 
 # Bibliographic Dublin Core info.
 epub_title = u'epub_title'
-epub_author = u'Nokia, Qt Learning'
+epub_author = u'Digia, Qt Learning'
 epub_publisher = u'http://qt.digia.com/Product/Learning/'
 epub_copyright = u'(C) 2011 Nokia'
 

@@ -8,8 +8,8 @@
     http://creativecommons.org/licenses/by-sa/2.5/legalcode .
     ---------------------------------------------------------------------------
 
-Setting up your work environment
-================================
+Work Environment Setup
+=======================
 
 If this is your first Qt Quick project, it makes sense to take a look at the tools you need, how a new project can be started and what are the most important needs of the daily development workflow.
 

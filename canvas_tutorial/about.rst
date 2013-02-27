@@ -29,9 +29,11 @@ A .zip file that contains the example source code referred in each chapter:
 
 The guide is available in the following offline formats:
 
-     `PDF <http://releases.qt-project.org/learning/developerguides/canvastutorial/QtQuickCanvasTutorial.pdf>`_
-     `ePub <http://releases.qt-project.org/learning/developerguides/QtQuickCanvasTutorial.epub>`_ for ebook readers. Further details can be found `here <http://en.wikipedia.org/wiki/EPUB#Software_reading_systems>`_.
-     `Qt Help <http://releases.qt-project.org/learning/developerguides/canvastutorial/QtQuickCanvasTutorial.qch>`_ for Qt Assistant and Qt Creator. In Qt Assistant, go to the :qt:`Preferences Dialog <assistant-details.html#preferences-dialog>`, in the `Documentation` tab (in a collapsible menu for Mac users), click on the `Add` button in order to add this guide in .qch format. Do the same in Qt Creator under the `Options` dialog. In the `Help` section, you can add this guide under the `Documentation` tab.
+    * `PDF <http://releases.qt-project.org/learning/developerguides/canvastutorial/QtQuickCanvasTutorial.pdf>`_
+
+    * `ePub <http://releases.qt-project.org/learning/developerguides/canvastutorial/QtQuickCanvasTutorial.epub>`_ for ebook readers.
+
+    * `Qt Help <http://releases.qt-project.org/learning/developerguides/canvastutorial/QtQuickCanvasTutorial.qch>`_ for Qt Assistant and Qt Creator.
 
 
 License

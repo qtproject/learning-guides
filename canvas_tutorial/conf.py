@@ -28,7 +28,7 @@ htmlhelp_basename = 'QtQuickCanvasTutorial'
 
 latex_documents = [
   ('index', 'QtQuickCanvasTutorial.tex', u'Qt Quick Painting using Canvas Item',
-   u'Nokia, Qt Learning', 'manual'),
+   u'Digia, Qt Learning', 'manual'),
 ]
 
 # -- Options for Epub output ---------------------------------------------------

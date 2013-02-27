@@ -140,7 +140,7 @@ The complete code of our application importing JavaScript files as discussed abo
 
 .. Topic:: More Advanced Use of JavaScript
 
-    If you are interested in a more advanced use of JavaScript with Qt Quick, consider reading "Programming with Qt Quick for Symbian and MeeGo Harmattan Devices" and "Qt Quick Application Developer Guide for Desktop" available :guides-homepage:`under this link<>`.
+    If you are interested in a more advanced use of JavaScript with Qt Quick, consider reading "Qt Quick Application Developer Guide for Desktop" available :guides-homepage:`under this link<>`.
 
 .. rubric:: What's Next?
 

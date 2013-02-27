@@ -9,7 +9,7 @@
     ---------------------------------------------------------------------------
 
 
-Overview of the "SpaceBurger" game
+Overview of the "SpaceBurger" Game
 ==================================
 
 Application idea

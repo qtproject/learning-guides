@@ -239,11 +239,9 @@ One or more transformations can be applied to an `Item3D`'s `transform` or `pret
 
 As explained above, we want the     hamburger* to rotate in the flight direction, so we need to achieve three things:
 
-     When moving *hamburger* along the `x` axis (left or right), the *hamburger* should roll a bit into flight direction. (the rotation axis is the `z` axis)
-
-     When moving *hamburger* along the `x` axis (left or right), it should move the nose in flight direction. (the rotation axis is the `y` axis)
-
-     When moving *hamburger* along the `y` axis (up or down), the *hamburger* should move its front up or down. (the rotation axis is the `x` axis)
+    * When moving *hamburger* along the `x` axis (left or right), the *hamburger* should roll a bit into flight direction. (the rotation axis is the `z` axis)
+    * When moving *hamburger* along the `x` axis (left or right), it should move the nose in flight direction. (the rotation axis is the `y` axis)
+    * When moving *hamburger* along the `y` axis (up or down), the *hamburger* should move its front up or down. (the rotation axis is the `x` axis)
 
 Now we can add the different transformations to the `transform` property in the  `Player.qml` and specify their axis. We are connecting the angle of each rotation directly to the acceleration, which will have a fairly good-looking result. The scalar factors have been obtained by trial and error:
 

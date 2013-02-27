@@ -557,7 +557,7 @@ Shader Effect
 
 Now we want to display a hot air balloon moving up from the bottom of the window and have a flag attached to it. For this we need two images:
 
-     One to simulate the hot air balloon with a ``NumberAnimation`` to make it move from the bottom to the top of the window:
+One to simulate the hot air balloon with a ``NumberAnimation`` to make it move from the bottom to the top of the window:
 
 .. code-block:: js
 

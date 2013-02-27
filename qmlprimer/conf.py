@@ -33,7 +33,7 @@ htmlhelp_basename = 'IntroToApplicationDevelopmentWithQtQuick'
 
 latex_documents = [
   ('index', 'QtQuickAppDevIntro.tex', u'Introduction to Application Development with Qt Quick',
-   u'Qt Learning', 'manual'),
+   u'Digia, Qt Learning', 'manual'),
 ]
 
 # -- Options for Epub output ---------------------------------------------------

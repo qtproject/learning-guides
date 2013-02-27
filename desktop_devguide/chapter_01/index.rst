@@ -40,15 +40,15 @@ Get the Source Code and the Guide in Different Formats
 
 A .zip file that contains the source code of each chapter is provided:
 
-     :download:`Source code <qtquickdesktop/notezapp_src.zip>`_
+     :download:`Source code <qtquickdesktop/notezapp_src.zip>`
 
 The guide is available in the following formats:
 
-     :download:`PDF <qtquickdesktop/QtQuickApplicationGuide4Desktop.pdf>`_
+    * :download:`PDF <qtquickdesktop/QtQuickApplicationGuide4Desktop.pdf>`
 
-     :download:`ePub <qtquickdesktop/QtQuickApplicationGuide4Desktop.epub>`_ for ebook readers. Further details can be found `here <http://en.wikipedia.org/wiki/EPUB#Software_reading_systems>`_.
+    * :download:`ePub <qtquickdesktop/QtQuickApplicationGuide4Desktop.epub>` for ebook readers.
 
-     :download:`Qt Help <qtquickdesktop/QtQuickApplicationGuide4Desktop.qch>`_ for Qt Assistant and Qt Creator. In Qt Assistant under the :creator:`Preferences Dialog <creator-help.html#adding-external-documentation>`, in the `Documentation` tab (in a collapsible menu for Mac users), you click on the Add button in order to add this guide in the .qch format. We do the same in Qt Creator, under the `Options` dialog, in the `Help` section you, can add this guide in the `Documentation` tab.
+    * :download:`Qt Help <qtquickdesktop/QtQuickApplicationGuide4Desktop.qch>` for Qt Assistant and Qt Creator.
 
 
 License

@@ -12,13 +12,13 @@
 Introduction
 ============
 
-If you want to draw custom graphics within your Qt Quick application, the :qt5-snapshot:`Qt Quick Canvas <qtquick/qml-qtquick2-canvas.html>`_ item is your choice.
+If you want to draw custom graphics within your Qt Quick application, the :qt5-snapshot:`Qt Quick Canvas <qtquick/qml-qtquick2-canvas.html>` item is your choice.
 
 The Canvas type was introduced in Qt Quick 2.0 and provides an area in which you can draw using JavaScript. It uses a high-level command-set based on `the HTML5 Canvas specification <http://www.w3.org/TR/html5/the-canvas-element.html>`_. The Canvas type allows you to draw basic and complex shapes, add color, gradients, shadows, images, text, and access low-level pixel data. Using JavaScript, facilitates the presentation of dynamic content.
 
 After a brief introduction to the Canvas type, we'll develop an interactive pie chart visualization. Later in this guide, we'll see how to port existing HTML5 Canvas code to a Qt Quick 2 application.
 
-This tutorial introduces you to the Qt Quick Canvas using example programs and is not meant to show each and every aspect of this type. A detailed description of the Canvas type and its supported rendering commands can be found in the Qt documentation pages (:qt5-snapshot:`Canvas <qtquick/qml-qtquick2-canvas.html>`_, :qt5-snapshot:`Context2D <qtquick/qml-qtquick2-context2d.html>`_). Also note that a large number of good HTML5 Canvas API tutorials are available on the internet. As the Qt Quick Canvas type is based on the HTML5 specification, these tutorials can serve as an excellent starting point to learn drawing. We have listed a few of those tutorials at `the end of this tutorial <conclusion.html>`_. We also assume that you are already familiar with Qt Quick in general, as this tutorial does refer to some the non-Canvas features.
+This tutorial introduces you to the Qt Quick Canvas using example programs and is not meant to show each and every aspect of this type. A detailed description of the Canvas type and its supported rendering commands can be found in the Qt documentation pages (:qt5-snapshot:`Canvas <qtquick/qml-qtquick2-canvas.html>`, :qt5-snapshot:`Context2D <qtquick/qml-qtquick2-context2d.html>`). Also note that a large number of good HTML5 Canvas API tutorials are available on the internet. As the Qt Quick Canvas type is based on the HTML5 specification, these tutorials can serve as an excellent starting point to learn drawing. We have listed a few of those tutorials at `the end of this tutorial <conclusion.html>`. We also assume that you are already familiar with Qt Quick in general, as this tutorial does refer to some the non-Canvas features.
 
 
 A Basic Example

@@ -9,8 +9,8 @@
     ---------------------------------------------------------------------------
 
 
-Qt3D, the basics
-=================
+Qt3D Basics
+===========
 
 In order to starting using Qt3D API in Qt Quick you need to import it in your application with the statement:
 

@@ -17,7 +17,7 @@ Overview
 
 Qt Quick 2 comes with the `Particles` module for making nice visual particle effects, which can be used by many applications that require a lot of tiny moving particles such as fire simualtion, smoke, stars, music visualization, and so on.
 
-The :qt5:`Particles <qtquick/qtquick-particles2-qml-particlesystem.html>` module is based on four major components:
+The :qt5:`Particles <qtquick/qtquick-particles2-qtquick-effects-particles.html>` module is based on four major components:
 
 .. image:: images/particles-module.png
     :align: center

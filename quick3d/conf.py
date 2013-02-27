@@ -28,7 +28,7 @@ htmlhelp_basename = 'GameDevelopmentQt3D'
 
 latex_documents = [
   ('index', 'GameDevelopmentQt3D.tex', u'Developing an arcade game with Qt3D',
-   u'Nokia, Qt Learning', 'manual'),
+   u'DIgia, Qt Learning', 'manual'),
 ]
 
 # -- Options for Epub output ---------------------------------------------------
@@ -44,5 +44,5 @@ epub_title = u'GameDevelopmentQt3D'
 qthelp_basename = 'GameDevelopmentQt3D'
 
 
-version = '0.2'
-release = 'Draft - Work in Progress'
+version = '1.0'
+

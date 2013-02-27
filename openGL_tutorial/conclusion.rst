@@ -12,7 +12,7 @@
 Conclusion & Further Reading
 ============================
 
- We hope you liked this tutorial and that we have made you even more curious about OpenGL and 3D programming. If you want to delve deeper into OpenGL, you should definitively think about getting a good book dedicated to this topic. `The OpenGL homepage <http://www.opengl.org>`_ lists quite a few recommendations. If you are looking for an even higher level approach, you may consider taking a look at `Qt/3D <http://doc-snapshot.qt-project.org/qt3d-1.0>`_ and/or `QtQuick3D <http://doc.qt.digia.com/qt-quick3d-snapshot>`_.
+We hope you liked this tutorial and that we have made you even more curious about OpenGL and 3D programming. If you want to delve deeper into OpenGL, you should definitively think about getting a good book dedicated to this topic. `The OpenGL homepage <http://www.opengl.org>`_ lists quite a few recommendations. If you are looking for an even higher level approach, you may consider taking a look at `Qt/3D <http://doc-snapshot.qt-project.org/qt3d-1.0>`_ and/or `QtQuick3D <http://doc.qt.digia.com/qt-quick3d-snapshot>`_.
 
 As OpenGL is able to compute a lot of information really fast, you may have thoughts about using it for more than just computer graphics. A framework based on this approach is called `OpenCL` (which is also managed by the Khronos Group Inc.). There even is a Qt Module for this framework. It is called `QtOpenCL <http://doc.qt.digia.com/opencl-snapshot/index.html>`_.
 

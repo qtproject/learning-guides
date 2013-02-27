@@ -16,7 +16,7 @@ Overview
 
 In order to perform advanced graphical effects, Qt Quick 2 enables you to use vertex and fragment shader programs with your QML local properties via the :qt5:`ShaderEffect <qtquick/qml-qtquick2-shadereffect.html>` QML type.
 
-This type enables you to combine your GLSL program with your QML code to control the graphics at a much lower level using custom shaders. `ShaderEffect` enables you to implement a vertex or fragment shader program in your QML code via the :qt5-snapshot:`vertexShader <qml-qtquick2-shadereffect.html#vertexShader-prop>` and :qt5:`fragmentShader <qtquick/qml-qtquick2-shadereffect.html#fragmentShader-prop>` properties. When you specify a QML item as variant property in your `ShaderEffect`, the item is provided to your vertex or fragment shader as `Sampler2D`.
+This type enables you to combine your GLSL program with your QML code to control the graphics at a much lower level using custom shaders. `ShaderEffect` enables you to implement a vertex or fragment shader program in your QML code via the :qt5:`vertexShader <qml-qtquick2-shadereffect.html#vertexShader-prop>` and :qt5:`fragmentShader <qtquick/qml-qtquick2-shadereffect.html#fragmentShader-prop>` properties. When you specify a QML item as variant property in your `ShaderEffect`, the item is provided to your vertex or fragment shader as `Sampler2D`.
 
 Consider the following example:
 
