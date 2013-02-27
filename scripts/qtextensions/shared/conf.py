@@ -257,6 +257,13 @@ latex_domain_indices = False
 #   'preamble': latex_custom_preamble
 # }
 
+# Removes the blank pages betweeen chapters
+latex_elements = {
+  'classoptions': ',oneside',
+  'babel': '\\usepackage[english]{babel}',
+  'fncychap': '\\usepackage[Sonny]{fncychap}'
+}
+
 # change the font size of the code samples in the LaTex and PDF output
 # taken from http://stackoverflow.com/questions/9899283/how-do-you-change-the-code-example-font-size-in-latex-pdf-output-with-sphinx
 #
