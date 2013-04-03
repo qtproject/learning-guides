@@ -19,7 +19,7 @@ Accessing and loading content
 
 Qt Quick 1.x allows the loading of images and fonts located on the network or in the local file system. The path to related files is defined relatively to the location of the QML file where the content is loaded. The same relative paths can be used when content is loaded over the network. This makes moving the content from the file system to the network very easy and does not require large changes in the code. See :qt:`this article<qdeclarativenetwork.html>` for more details.
 
-Loading external content can always end up with problems. Files get misplaced. The network connection can be too slow or the server is off-line. You don't want that. :qt:`Image<qml-image.html>` and :qt:`FontLoader<qml-fontloader.html>` provide ``status`` and ``progress`` properties for handling such situations. ``progress`` changes its value from ``0.0`` to ``1.0`` in accordance to the actual progress of loading. If content is loaded from the file system, ``progress`` is set to ``1.0`` almost instantly if we do not use it in our application. The code segment for loading a font and tracing the status of loading looks like this:
+Loading external content can always end up with problems. Files could get misplaced, the network connection can be too slow, or the server could go off-line. You can be better prepared for such situations now by using :qt:`Image<qml-image.html>` and :qt:`FontLoader<qml-fontloader.html>`, which provide ``status`` and ``progress`` properties. ``progress`` changes its value from ``0.0`` to ``1.0`` in accordance to the actual progress of loading. If content is loaded from the file system, ``progress`` is set to ``1.0`` almost instantly. The code segment for loading a font and tracing the status of loading looks like this:
 
 .. code-block:: js
 
@@ -56,7 +56,7 @@ We need to change a few image properties. The image should cover the entire surf
 
 .. Topic:: Dealing with Image Sizes
 
-    Most of the visual properties of an image can be changed using its parent (:qt:`Item<qml-item.html>`) properties. Other :qt:`Image's<qml-image.html>` properties help handle critical image aspect - its size. If you deal with large images, you should set the ``sourceSize`` property to a size which you really need, otherwise the image loads in its full size. It is worth to notice the difference between ``paintedHeight`` and ``height``, and between ``paintedWidht`` and ``width``. The *painted* property pairs describe the size of the area taken by the image when it is painted on the screen, whereas the another pair describes the loaded size of the image. Both can be different if the image is scaled. If you change the ``scale`` property inherited from :qt:`Item<qml-item.html>`, be aware of the impact of the ``fillMode`` property on the actual scaling result. The ``smooth`` property smoothens the edges of scaled images, but also incurs a performance cost. See the :qt:`Image<qml-image.html>` documentation for more details.
+    Most of the visual properties of an image can be changed using its parent (:qt:`Item<qml-item.html>`) properties. Other :qt:`Image's<qml-image.html>` properties help handle critical image aspect - its size. If you deal with large images, you should set the ``sourceSize`` property to a size which you really need, otherwise the image loads in its full size. It is worth to notice the difference between ``paintedHeight`` and ``height``, and between ``paintedWidth`` and ``width``. The *painted* property pairs describe the size of the area taken by the image when it is painted on the screen, whereas the other pair describes the loaded size of the image. Both can be different if the image is scaled. If you change the ``scale`` property inherited from :qt:`Item<qml-item.html>`, be aware of the impact of the ``fillMode`` property on the actual scaling result. The ``smooth`` property smoothens the edges of scaled images, but also incurs a performance cost. See the :qt:`Image<qml-image.html>` documentation for more details.
 
 Basic Text Parameters
 =====================
@@ -65,7 +65,7 @@ In the first section, we loaded a custom LED-like font. We now need to assign it
 
 .. Topic:: Finding the Fonts Installed
 
-    Sometimes it might be tricky to find out which fonts are installed on your target system and how to spell their names right. A small example provided in Qt Quick :qt:`lists names of all available<declarative-text-fonts-fonts-qml-fonts-qml-availablefonts-qml.html>` rendered in their fonts.
+    Sometimes it might be tricky to find out which fonts are installed on your target system and how to spell their names right. A small example provided in Qt Quick :qt:`lists names of all available fonts<declarative-text-fonts-fonts-qml-fonts-qml-availablefonts-qml.html>` rendered in their fonts.
 
 Other :qt:`Text<qml-text.html>` properties allow a broad variation of the visual appearance of a text. In our application, we use the ``color``, ``style``, and size-related properties.
 
@@ -76,7 +76,7 @@ The customized text element for displaying time looks like this:
     Text {
         id: timeText
         text: root.currentTime
-        font.pixelSize: root.height    root.timeTextProportion
+        font.pixelSize: root.height * root.timeTextProportion
         font.family: ledFont.name
         font.bold: true
         color: root.textColor
@@ -90,7 +90,7 @@ In order to make the ``timeText`` element appear more attractive, we use some tr
 
 The :qt:`Text<qml-text.html>` element also provides basic layout controls (for example, you can set how the text should be wrapped using ``wrapMode``). We're going to use this property later. The most important thing to note about text formatting is that :qt:`Text<qml-text.html>` supports :qt:`rich text<Qt's richtext-html-subset.html>` markup. This makes it possible to display one block of text in various formatting, colors, sizes etc.
 
-The appearance of our application is now less boring:
+The appearance of our application is less boring now:
 
 .. image:: images/static_clock2.png
     :align: center

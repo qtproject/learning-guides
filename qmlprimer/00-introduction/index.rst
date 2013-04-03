@@ -52,7 +52,7 @@ This tutorial is available in the following formats:
 
      :download:`Qt Help<qtquickappdevintro/QtQuickAppDevIntro.qch>`.
 
-..note: The example application referred in this guide is developed with Qt 4.8.x and Qt Quick 1.1 running on Linux and Windows. Refer to the section,
+.. Note: The example application referred in this guide is developed with Qt 4.8.x and Qt Quick 1.1 running on Linux and Windows. Refer to the section,
   :ref:`porting-primer-to-qt5` for details about how to get this example application running with Qt5.
 
 Help us help you
@@ -65,38 +65,28 @@ Use the Qt Bug Tracker to give us feedback.
 Related material
 -----------------
 
-    *Other guides*
-
-As mentioned before, the following Qt Learning Guides for Qt Quick could be useful if you're developing for desktop and mobile devices on Symbian and MeeGo:
-
-    * Programming with Qt Quick for Symbian and MeeGo Harmattan Devices
-    * Qt Quick Application Developer Guide for Desktop
-
-Check :guides-homepage:`this link<>` to download these and other guides.
-
-    *Qt documentation*
+*Qt documentation*
 
 There are two major sets of documents in Qt that we will be referring to. We recommend reading them to learn all the key details about Qt Quick:
+  * :qt:`Qt Quick landing page in the Qt documentation <qtquick.html>`
+  * :qt:`Introduction to the QML Language <qdeclarativeintroduction.html>`
 
-     * :qt:`Qt Quick landing page in the Qt documentation <qtquick.html>`
-     * :qt:`Introduction to the QML Language <qdeclarativeintroduction.html>`
-
-    *Training materials*
+*Training materials*
 
 You may consider looking into the training materials published `on the Qt Training web page <http://qt.digia.com/Product/Learning/Topics/QML-Qt-Quick/>`_ . In addition to training slides, training materials contain a lot of useful examples.
 
-    *Videos**
+*Videos*
 
 The recordings of training sessions and technical talks given at Qt Developer Days are another interesting learning resource. They are available in `the Qt's video collection <http://qt-project.org/videos>`_ .
 
-    *Examples and demos**
+*Examples and demos*
 
 Qt Quick comes with a wide range of demos and examples. You can access all of them either from the Qt Creator welcome page or from the :qt:`Qt Quick Code Samples  <qdeclarativeexamples.html>` page in Qt documentation.
 
 The wiki on the `Qt Project website <http://qt-project.org/>`_ has two listings of examples and demos:
 
-    * `Demos and Examples <http://qt-project.org/wiki/Category:Learning::Demos_and_Examples>`_
-    * `Example Applications for Qt Quick <http://qt-project.org/wiki/qml_examples_directory>`_
+  * `Demos and Examples <http://qt-project.org/wiki/Category:Learning::Demos_and_Examples>`_
+  * `Example Applications for Qt Quick <http://qt-project.org/wiki/qml_examples_directory>`_
 
 
 License

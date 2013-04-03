@@ -39,15 +39,12 @@ This is how it looks on the screen:
 
 Although the application is not any closer to being useful in real life, it's interesting to further analyze what happens on the screen.
 
-One :qt:`Rectangle<qml-rectangle.html>` is the root item. Two others contain a :qt:`Text<qml-text.html>` with different text. All items are rendered as a stack according their order in the tree:
+One :qt:`Rectangle<qml-rectangle.html>` is the root item. Two others contain a :qt:`Text<qml-text.html>` with different text. All items are rendered as a stack according to their order in the tree:
 
-     the root rectangle first
-
-     then the grey rectangle with its text
-
-     the green rectangle comes on top and covers a part of the previous text
-
-     the :qt:`Text<qml-text.html>` element contained in the green rectangle comes as the last one on top of all others.
+  * Starting with the root rectangle first,
+  * followed by the grey rectangle with its text,
+  * then the green rectangle comes on top and covers part of the previous text,
+  * and finally the :qt:`Text<qml-text.html>` element contained in the green rectangle comes as the last one on top of all others.
 
 We could add more elements, all of them are added to this stack and drawn on the upper left corner which is the *(0,0)* position. This is the default rendering position, if you do not specify ``x`` and ``y`` properties.
 
@@ -76,7 +73,7 @@ Setting ``z`` to ``-1`` will put an item into the background of its parent:
 .. image:: images/ordered_elements_z_minus_1.png
     :align: center
 
-If you noticed, the text elements are not clipped by the boundaries of their parents - rectangles. This is the default behavior for performance reasons. If needed, this can be changed by setting the ``clip`` property to true: ``clip: true``. ``clip`` is a property of :qt:`Item<qml-item.html>` and available in all visual elements inheriting from it.
+If you noticed, the text elements are not clipped by the boundaries of their parents - rectangles. This is the default behavior for performance reasons. If needed, this can be changed by setting the ``clip`` property to true: ``clip:true``. ``clip`` is a property of :qt:`Item<qml-item.html>` and available in all visual elements inheriting from it.
 
 If we set ``clip`` to true in our application it will look like this:
 
@@ -86,9 +83,9 @@ If we set ``clip`` to true in our application it will look like this:
 Arranging application elements on the screen
 --------------------------------------------
 
-On the next step we will need to arrange the elements so that the build up an application UI. Arranging items brings up another key aspect: identification of items.
+The next step is to arrange the elements so that the application UI looks meaningful. Arranging items brings up another key aspect: identification of items.
 
-Though the use of the IDs is optional in Qt Quick. We have to use IDs if items have to be arranged in relation to each other. Generally, you should strongly consider using IDs all the time. This greatly improves readability of the code and prevents weird side effects. Be advised to use consistent IDs for all root items in your project, for example, just ``root``. This helps you keep track of items used and avoid side effects.
+Though the use of the IDs is optional in Qt Quick. We have to use IDs if items have to be arranged in relation to each other. Generally, you should strongly consider using IDs all the time. This greatly improves readability of the code and prevents unexpected behavior. Be advised to use consistent IDs for all root items in your project, for example, just ``root``. This helps you keep track of items used and avoid weird behaviors.
 
 We already saw some use of anchoring in previous examples. Lets take a closer look on this and use it to place elements so that they start getting closer to a clock.
 
@@ -177,7 +174,7 @@ In fact, in the case of our button inheriting from :qt:`Rectangle<qml-rectangle.
 
 The optional ``default`` keyword in the syntax outlined above are used to create `default properties`. They hold the child elements of an item. This is a more advanced use which is out of the scope of this guide. Refer to :qt:`this<qml-extending.html#default-property>` and :qt:`this article<propertybinding.html#default-properties>` in Qt documentation.
 
-As mentioned before, a property change generates notification signals that can have an handler to respond to the property change. Handlers are assigned to ``on<property_name>Changed`` properties which are automatically created for all items properties, including custom properties you have added.  Lets do a small experiment with a rectangle to see this in action:
+As mentioned before, a property change generates notification signals that can have an handler to respond to the property change. Handlers are assigned to ``on<property_name>Changed`` properties, which are automatically created for all items' properties, including custom properties you have added.  Lets do a small experiment with a rectangle to see this in action:
 
 .. code-block:: js
 

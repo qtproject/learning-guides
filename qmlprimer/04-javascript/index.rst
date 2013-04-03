@@ -13,7 +13,7 @@
 Using JavaScript
 =================
 
-We've already used JavaScript a lot in our code, but we have only scratched the surface. JavaScript can be used in many more sophisticated and powerful ways in a Qt Quick application. In fact, Qt Quick is implemented as a JavaScript extension. JavaScript can be used almost anywhere as long as the code returns the value of the expected type. Moreover, using JavaScript is the standard way of writing parts of the application code which deal with application logic and calculations.
+We've already used JavaScript a lot in our code, but we have only scratched the surface. JavaScript can be used in many more sophisticated and powerful ways in a Qt Quick application. In fact, Qt Quick is implemented as a JavaScript extension. JavaScript can be used almost anywhere as long as the code returns the value of the expected type. Moreover, using JavaScript is the standard way of writing parts of the application code, which deals with application logic and calculations.
 
 There are two important topics we need to talk about before we continue developing our application.
 
@@ -24,7 +24,7 @@ JavaScript has its origins in the web development. In the course of time, JavaSc
 
 JavaScript is also used outside of the web where its functionality is tailored to support a use case. Still, the use of JavaScript for client-side programming in web development is dominating. Due to this, all books and most web resources about JavaScript are actually dedicated to web development. Qt Quick belongs to one of the platforms which use JavaScript outside of the web. If you read books or other materials about JavaScript to understand and use it better with Qt Quick, be aware of this difference.
 
-Qt development teams are doing their best to provide all the details the use of JavaScript in Qt Quick, and this guide is part of that effort.
+Qt development teams are doing their best to provide all the details about the use of JavaScript in Qt Quick, and this guide is part of that effort.
 
 More About JavaScript
 --------------------------------------
@@ -40,7 +40,7 @@ In addition to the references in the annex, consider reading the following artic
 The following three articles in Qt Documentation explain essential details of JavaScript in Qt Quick:
 
     * :qt:`Integrating JavaScript<qdeclarativejavascript.html>` - key aspects to be aware of when using JavaScript in Qt Quick
-    * :qt:`ECMAScript Reference<ecmascript.html>` - a list of built-in objects, functions and properties supported by QtScript and so in Qt Quick
+    * :qt:`ECMAScript Reference<ecmascript.html>` - a list of built-in objects, functions, and properties supported by Qt Script and Qt Quick
     * :qt:`QML Scope<qdeclarativescope.html>` - explains the visibility of JavaScript objects and Qt Quick items
 
 Note that significant changes and large updates to Qt Documentation may come with the future Qt releases to provide a full coverage of the use of JavaScript in Qt Quick. Stay tuned and check Qt Documentation again and again.
@@ -91,7 +91,7 @@ The ``updateTime()`` function needs a trigger so that the ``currentTime`` and ``
             updateTime()
             // refresh the interval to update time each second or minute.
             // consider the delta in order to update on a full minute
-            interval = 1000    (showSeconds? 1 : (60 - getFormattedDateTime("ss")))
+            interval = 1000 * (showSeconds? 1 : (60 - getFormattedDateTime("ss")))
         }
     }
 

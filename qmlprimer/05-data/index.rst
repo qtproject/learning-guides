@@ -13,18 +13,18 @@ Acquire and Visualize Data
 
 In this section, we leave our clock application for a while and start another one: a weather forecast application. This section focuses on handling data. Our previous code kept data in properties and in JavaScript variables. This is only sufficient for small and simple applications. Sooner or later you will need to deal with larger sets of data.
 
-Qt Quick implements the known model-view architecture and provides a handy set of APIs for this. There is a selection of *models* which keep and, if needed, acquire data. *View* elements read model items and render each of them with the help of a *delegate* in a specific way. For example, as a grid or as a list.
+Qt Quick implements the known model-view architecture and provides a handy set of APIs for this. There is a selection of *models* that store and acquire data when needed. *View* elements read model items and render each of them with the help of a *delegate* in a specific way. For example, as a grid or as a list.
 
 Models
 ------
 
-Qt Quick models are very simple since they are based on the concept of lists. The three kinds of models that are used the most are:
+Qt Quick models are very simple as they are based on the concept of lists. The three kinds of models that are used the most are:
 
 * an ``int`` value (useful to display something multiple times)
 * a JavaScript array of objects
 * list models, for example,  :qt:`ListModel<qml-listmodel.html>` and :qt:`XmlListModel<qml-xmllistmodel.html>` elements
 
-See the *Models and Data Handling* section in the :qt:`"QML Elements"<qdeclarativeelements.html>` article for a full list of model related items. There are also some advanced approaches which are discussed in the :qt:`"QML Data Models"<qdeclarativemodels.html>` article in Qt Documentation.
+See the *Models and Data Handling* section in the :qt:`"QML Elements"<qdeclarativeelements.html>` article for a full list of model-related items. There are also some advanced approaches which are discussed in the :qt:`"QML Data Models"<qdeclarativemodels.html>` article in Qt Documentation.
 
 We are going to use :qt:`XmlListModel<qml-xmllistmodel.html>` and take a look at a few examples where an ``int`` and an ``array`` are used as models.
 
