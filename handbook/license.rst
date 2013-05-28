@@ -1,7 +1,6 @@
 ..
     ---------------------------------------------------------------------------
     Copyright (C) 2012 Digia Plc and/or its subsidiary(-ies).
-    All rights reserved.
     This work, unless otherwise expressly stated, is licensed under a
     Creative Commons Attribution-ShareAlike 2.5.
     The full license document is available from
@@ -25,7 +24,6 @@ In your main ``index.rst`` please add the following lines at the end::
     .. rubric:: Disclaimer
 
     Copyright (C) 2012 Digia Plc and/or its subsidiary(-ies).
-    All rights reserved.
 
     This work, unless otherwise expressly stated, is licensed under a
     Creative Commons Attribution-ShareAlike 2.5.
@@ -43,7 +41,6 @@ In each ``.rst`` file please add the following license text at the beginning of 
     ..
         ---------------------------------------------------------------------------
         Copyright (C) 2012 Digia Plc and/or its subsidiary(-ies).
-        All rights reserved.
         This work, unless otherwise expressly stated, is licensed under a
         Creative Commons Attribution-ShareAlike 2.5.
         The full license document is available from
