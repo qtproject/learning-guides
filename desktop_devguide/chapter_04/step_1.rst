@@ -37,7 +37,7 @@ As mentioned before, we first load the `Note` component in the `Page` component:
     }
      ...
 
-Now let's define a Javascript function that will creates QML `Note` objects. While creating a QML object, we must ensure that one of the arguments is the parent of the `this` object. Considering to have a `Note` item container within the `Page` component would be a good idea for managing our note objects, as we would like to save these notes in a database.
+Now let's define a Javascript function that will create QML `Note` objects. While creating a QML object, we must ensure that one of the arguments is the parent of the `this` object. Considering to have a `Note` item container within the `Page` component would be a good idea for managing our note objects, as we would like to save these notes in a database.
 
 .. code-block:: js
 
@@ -153,7 +153,7 @@ In the `main.qml` file, let's see how to call the function for creating new note
 Deleting Note Objects
 ---------------------
 
-Deleting the `Note` objects is a more straightforward process because the QML :qt5:`Item <qtquick/qml-qtquick2-item.html>` type provides a JavaScript function called :qt5:`destroy() <qtqml/qtqml-javascript-dynamicobjectcreation.html#deleting-objects-dynamically>`. As we already have a container item whose childrens are `Note` items, we can simply iterate through the list of children and call :qt5:`destroy() <qtqml/qtqml-javascript-dynamicobjectcreation.html#deleting-objects-dynamically>` on each of them.
+Deleting the `Note` objects is a more straightforward process because the QML :qt5:`Item <qtquick/qml-qtquick2-item.html>` type provides a JavaScript function called :qt5:`destroy() <qtqml/qtqml-javascript-dynamicobjectcreation.html#deleting-objects-dynamically>`. As we already have a container item whose children are `Note` items, we can simply iterate through the list of children and call :qt5:`destroy() <qtqml/qtqml-javascript-dynamicobjectcreation.html#deleting-objects-dynamically>` on each of them.
 
 In the `Page` component, let's define a function to perform this operation for us:
 
